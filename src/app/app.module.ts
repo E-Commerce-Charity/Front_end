@@ -20,13 +20,18 @@ import {
 } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { ContactHeaderComponent } from './components/contact/contact-header/contact-header.component';
+import { ContactFormComponent } from './components/contact/contact-form/contact-form.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 // import {MaterialExampleModule} from '../material.module';
 
 var Routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  { path: '*', component: ErrorComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: '**', component: ErrorComponent },
 ];
 
 @NgModule({
@@ -36,6 +41,9 @@ var Routes: Routes = [
     HeaderComponent,
     ErrorComponent,
     LoginComponent,
+    ContactHeaderComponent,
+    ContactFormComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +57,7 @@ var Routes: Routes = [
     MatIconModule,
     MatInputModule,
     ReactiveFormsModule,
+    FontAwesomeModule,
   ],
   providers: [
     {
