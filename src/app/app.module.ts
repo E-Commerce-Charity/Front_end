@@ -20,6 +20,8 @@ import {
 } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { CardComponent } from './components/card/card.component';
+import { YsectionComponent } from './components/ysection/ysection.component';
 // import {MaterialExampleModule} from '../material.module';
 
 var Routes: Routes = [
@@ -36,6 +38,8 @@ var Routes: Routes = [
     HeaderComponent,
     ErrorComponent,
     LoginComponent,
+    CardComponent,
+    YsectionComponent,
   ],
   imports: [
     BrowserModule,
