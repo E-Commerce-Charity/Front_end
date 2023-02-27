@@ -1,6 +1,16 @@
+import { ProfileComponent } from './components/profile/profile.component';
+import { AboutComponent } from './components/about/about.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
+
+import { CardComponent } from './card/card.component';
+import { SectionComponent } from './section/section.component';
+import { UserComponent } from './user/user.component';
+import { ProductPageComponent } from './product-page/product-page.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -32,15 +42,23 @@ var Routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'cart', component: CartComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'profile', component: ProfileComponent },
   { path: '**', component: ErrorComponent },
 ];
-
 @NgModule({
   declarations: [
     AppComponent,
+
+    CardComponent,
+    SectionComponent,
+    UserComponent,
+    ProductPageComponent,
     SignupComponent,
     HeaderComponent,
     ErrorComponent,
+    AboutComponent,
+    ProfileComponent,
     LoginComponent,
     ContactHeaderComponent,
     ContactFormComponent,
@@ -61,13 +79,9 @@ var Routes: Routes = [
     ReactiveFormsModule,
     FontAwesomeModule,
     ReactiveFormsModule,
+    AppRoutingModule,
   ],
-  providers: [
-    {
-      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
-      useValue: { appearance: 'outline' },
-    },
-  ],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -7,19 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
   constructor() {}
-  // cartProducts: any[] = [
-  //   { title: 'product1', price: 150, quantity: 5 },
-  //   { title: 'product2', price: 200, quantity: 1 },
-  //   { title: 'product3', price: 100, quantity: 3 },
-  //   { title: 'product4', price: 100, quantity: 3 },
-  //   { title: 'product5', price: 100, quantity: 3 },
-  //   { title: 'product6', price: 100, quantity: 3 },
-  // ];
-  cartProducts: any[] = []; ////////////
+  cartProducts: any[] = [
+    { title: 'product1', price: 150, quantity: 5 },
+    { title: 'product2', price: 200, quantity: 1 },
+    { title: 'product3', price: 100, quantity: 3 },
+    { title: 'product4', price: 100, quantity: 3 },
+    { title: 'product5', price: 100, quantity: 3 },
+    { title: 'product6', price: 100, quantity: 3 },
+  ];
+  // cartProducts: any[] = []; ////////////
   total: any;
   totalQuantity: number = 0;
   ngOnInit(): void {
-    this.getCartProducts(); /////////////////
+    // this.getCartProducts(); /////////////////
     this.getCartTotal();
     this.getTotalQuantity();
   }
