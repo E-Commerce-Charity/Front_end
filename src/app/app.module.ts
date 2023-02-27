@@ -3,14 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 
+import { RouterModule, Routes } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { HeaderComponent } from './components/header/header.component';
-import { RouterModule, Routes } from '@angular/router';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import { ErrorComponent } from './components/error/error.component';
 import { LoginComponent } from './components/login/login.component';
+import { CartComponent } from './components/cart/cart.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ContactHeaderComponent } from './components/contact/contact-header/contact-header.component';
+import { ContactFormComponent } from './components/contact/contact-form/contact-form.component';
+import { ContactComponent } from './components/contact/contact.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -22,23 +29,11 @@ import {
 } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { ContactHeaderComponent } from './components/contact/contact-header/contact-header.component';
-import { ContactFormComponent } from './components/contact/contact-form/contact-form.component';
-import { ContactComponent } from './components/contact/contact.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { CartComponent } from './components/cart/cart.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { AboutHeaderComponent } from './components/about/about-header/about-header.component';
+
+// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 // import {MaterialExampleModule} from '../material.module';
-
-var Routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'signup', component: SignupComponent },
-  { path: 'about', component: AppComponent },
-  { path: '**', component: ErrorComponent },
-];
 
 @NgModule({
   declarations: [
@@ -53,12 +48,12 @@ var Routes: Routes = [
     CartComponent,
     NavbarComponent,
     FooterComponent,
+    AboutHeaderComponent,
   ],
   imports: [
     BrowserModule,
-
     FormsModule,
-    RouterModule.forRoot(Routes),
+    // RouterModule.forRoot(Routes),
     BrowserAnimationsModule,
     MatSlideToggleModule,
     BrowserAnimationsModule,
@@ -67,10 +62,11 @@ var Routes: Routes = [
     MatIconModule,
     MatInputModule,
     ReactiveFormsModule,
-    FontAwesomeModule,
+    // FontAwesomeModule,
     ReactiveFormsModule,
     AppRoutingModule,
   ],
+  exports: [AboutHeaderComponent],
   providers: [
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
@@ -78,7 +74,7 @@ var Routes: Routes = [
     },
 
     FormsModule,
-    RouterModule.forRoot(Routes),
+    // RouterModule.forRoot(Routes),
     BrowserAnimationsModule,
     MatSlideToggleModule,
     BrowserAnimationsModule,
@@ -87,15 +83,8 @@ var Routes: Routes = [
     MatIconModule,
     MatInputModule,
     ReactiveFormsModule,
-    ,
   ],
-  providers: [
-    {
-      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
-      useValue: { appearance: 'outline' },
-    },
-  ],
-  bootstrap: [AppComponent],
+
   bootstrap: [AppComponent],
 })
 export class AppModule {}

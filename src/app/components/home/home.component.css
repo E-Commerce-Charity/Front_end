@@ -16,7 +16,7 @@ header {
 }
 
 header .container {
-  padding-top: 100px;
+  padding-top: 180px;
   height: 100%;
   padding-bottom: 200px;
 }
@@ -434,7 +434,7 @@ section.our-mission {
   width: 100%;
   color: #fff;
   font-family: "Roboto", sans-serif;
-  margin-bottom: 300px;
+  /* margin-bottom: 300px; */
   position: relative;
   display: flex;
   place-items: center;

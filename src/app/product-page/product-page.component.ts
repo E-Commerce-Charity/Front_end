@@ -14,22 +14,16 @@ export class ProductPageComponent {
     { id: 4, title: 'donating', desc: 'lorem ipsm', addToCart: false },
   ];
 
-  cartProducts:any[]=[]
-  addToCart:boolean=true;
+  cartProducts: any[] = [];
+  addToCart: boolean = true;
 
-  addCart(event:any){
-    console.log(event)
-    if('card' in localStorage){
-      
-      this.cartProducts.push(event)
+  addCart(event: any) {
+    console.log(event);
+    if ('card' in localStorage) {
+      this.cartProducts.push(event);
     }
-    localStorage.setItem('card' ,JSON.stringify(event))
+    localStorage.setItem('card', JSON.stringify(event));
   }
-
-
-
-
-  
 }
 
 interface card {
