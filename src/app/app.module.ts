@@ -3,7 +3,13 @@ import { AboutComponent } from './components/about/about.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+import { CardComponent } from './card/card.component';
+import { SectionComponent } from './section/section.component';
+import { UserComponent } from './user/user.component';
+import { ProductPageComponent } from './product-page/product-page.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -33,10 +39,14 @@ var Routes: Routes = [
 
   { path: '*', component: ErrorComponent },
 ];
-
 @NgModule({
   declarations: [
     AppComponent,
+
+    CardComponent,
+    SectionComponent,
+    UserComponent,
+    ProductPageComponent,
     SignupComponent,
     HeaderComponent,
     ErrorComponent,
@@ -46,23 +56,9 @@ var Routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    RouterModule.forRoot(Routes),
-    BrowserAnimationsModule,
-    MatSlideToggleModule,
-    BrowserAnimationsModule,
-    MatAutocompleteModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatInputModule,
-    ReactiveFormsModule,
+    AppRoutingModule
   ],
-  providers: [
-    {
-      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
-      useValue: { appearance: 'outline' },
-    },
-  ],
-  bootstrap: [AppComponent],
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
