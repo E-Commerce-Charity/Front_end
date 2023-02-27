@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -24,6 +23,7 @@ import { ContactHeaderComponent } from './components/contact/contact-header/cont
 import { ContactFormComponent } from './components/contact/contact-form/contact-form.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CartComponent } from './components/cart/cart.component';
 // import {MaterialExampleModule} from '../material.module';
 
 var Routes: Routes = [
@@ -31,6 +31,7 @@ var Routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'cart', component: CartComponent },
   { path: '**', component: ErrorComponent },
 ];
 
@@ -44,6 +45,7 @@ var Routes: Routes = [
     ContactHeaderComponent,
     ContactFormComponent,
     ContactComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +60,7 @@ var Routes: Routes = [
     MatInputModule,
     ReactiveFormsModule,
     FontAwesomeModule,
+    ReactiveFormsModule,
   ],
   providers: [
     {

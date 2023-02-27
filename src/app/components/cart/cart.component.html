@@ -1,0 +1,115 @@
+<!-- <div class="context-header bg-light p-3 ">
+  <div class="container ">
+    <div class="row  justify-content-center fs-1">My Cart</div>
+  </div>
+</div>
+<div class="page-section  mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-9 ">
+        <div class="container d-flex bg-secondary py-3 justify-content-between">
+          <button type="button" class="btn gray text-white px-5 shadow-sm">Continue shopping</button>
+          <button type="button" class="btn btn-dark px-5 shadow-sm">Empty cart</button>
+        </div>
+        <div class="content border">
+          <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img
+                  src="../../../assets/images/viewpoints-the-benefits-of-philanthropy-for-high-net-worth-investors-cover-1040x425.jpg"
+                  class="img-fluid" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-8">
+                      <h5 class="card-title">Card title</h5>
+                    </div>
+                    <div class="col-4">
+                      <label class="form-label" for="customRange1">Example range</label>
+                      <div class="range">
+                        <input type="range" class="form-range" id="customRange1" />
+                      </div>
+                    </div>
+                  </div>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                    additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="checkOut-card bg-light p-5 text-center  border">
+          <h3>Total Donation</h3>
+          <p>50$</p>
+          <button type="button" class="btn btn-success px-5 shadow-sm">Checkout</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+
+
+
+
+
+<div class="container">
+  <div class="cartBox">
+    <div class="text-danger fs-3 text-center mb-3">Shopping Cart</div>
+    <div class="headCart">
+      <p class="fs-5 ">You have <label class="text-dannger">{{cartProducts.length}}</label> items in your cart</p>
+      <span class="btn btn-danger mb-2 p-2" (click)="clearCart()">Clear shopping cart</span>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr class="text-center">
+          <th></th>
+          <th>Name</th>
+          <th>Donation value</th>
+          <th style="width:15%;">Quantity</th>
+          <th>Total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of cartProducts; let index=index">
+          <td><img
+              src="../../../assets/images/viewpoints-the-benefits-of-philanthropy-for-high-net-worth-investors-cover-1040x425.jpg"
+              alt=""></td>
+          <td>{{item.title}}</td>
+          <td>{{item.price}} L.E</td>
+          <td>
+            <div class="quantity">
+              <button class="btn btn-dark me-2" (click)="minusAmount(index)">-</button>
+              <input class="mx-3" type="number" (change)="detectChange()" class="form-control"
+                [(ngModel)]="item.quantity" min="1">
+              <button class="btn btn-dark ms-2" (click)="addAmount(index)">+</button>
+            </div>
+          </td>
+          <td>{{item.price * item.quantity}} L.E</td>
+          <td>
+            <button class="btn btn-danger" (click)="deleteProduct(index)">delete</button>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th>Total Donation : {{total}} L.E or {{totalQuantity}} Meals</th>
+          <th><button class="btn btn-success">Order Now</button></th>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  <div *ngIf="false" class="alert alert-success" role="alert"><strong>Well done!</strong> Your order is successfully
+    sent</div>
+</div>

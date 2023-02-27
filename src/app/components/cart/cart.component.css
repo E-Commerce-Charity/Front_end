@@ -1,0 +1,50 @@
+/* .gray {
+  background-color: rgb(131, 131, 131);
+} */
+
+.cartBox {
+  border: 1px solid #444343;
+  border-radius: 5px;
+  padding: 0 20px;
+  margin: 50px 0;
+}
+
+.table {
+}
+.quantity {
+  display: flex;
+  justify-content: space-between;
+}
+input {
+  /* margin: 0 auto; */
+  text-align: center;
+}
+.table tbody {
+  border-top: 1px solid rgb(117, 117, 117);
+  border-bottom: 1px solid rgb(117, 117, 117);
+}
+.table tbody tr td {
+  border-bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+}
+.table tbody tr td img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+.headCart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.headCart span {
+  font-size: 16px;
+  cursor: pointer;
+  transform: all 0.3s ease-in-out;
+}
+/* .headCart span:hover {
+  color: white;
+  background-color: red;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.303);
+} */
