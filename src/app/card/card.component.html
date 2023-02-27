@@ -19,7 +19,11 @@
           <div class="progress">
             <div id="progress" class="progress-bar text-end" role="progressbar" [style.width.%]="progress"  aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">{{progress}}%</div>
           </div>
-          <div class="mt-3"><button class="btn btn-warning">Donate Now</button></div>
+          <div class="btns d-flex justify-content-between">
+
+            <div class="mt-3"><button class="btn btn-warning" (click)="donateNow()">Donate Now</button></div>
+            <div class="mt-3"><button class="btn btn-warning" (click)="add()">Add to Cart</button></div>
+          </div>
         </div>
       </div>
 </div>

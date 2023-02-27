@@ -26,9 +26,7 @@
                 <ng-container *ngFor="let card of cards" >
 
                     <div class="col-md" *ngIf="!card.addToCart" >
-                        
-                            <app-card ></app-card>
-    
+                        <app-card [data]="card" (card)="addCart($event)"></app-card>
                     </div>
                 </ng-container>
                 <!-- <div class="col-md"><app-card></app-card></div>
