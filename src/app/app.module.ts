@@ -45,6 +45,10 @@ var Routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'profile', component: ProfileComponent },
   { path: '**', component: ErrorComponent },
+<<<<<<< HEAD
+=======
+
+>>>>>>> e75478cf3dbdb4d6ddecb08ee8ac7d4bc13210e2
 ];
 @NgModule({
   declarations: [
@@ -67,6 +71,10 @@ var Routes: Routes = [
   ],
   imports: [
     BrowserModule,
+<<<<<<< HEAD
+=======
+
+>>>>>>> e75478cf3dbdb4d6ddecb08ee8ac7d4bc13210e2
     FormsModule,
     RouterModule.forRoot(Routes),
     BrowserAnimationsModule,
@@ -79,7 +87,19 @@ var Routes: Routes = [
     ReactiveFormsModule,
     FontAwesomeModule,
     ReactiveFormsModule,
+<<<<<<< HEAD
     AppRoutingModule,
+=======
+  ],
+  providers: [
+    {
+      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+      useValue: { appearance: 'outline' },
+    },
+
+    AppRoutingModule
+
+>>>>>>> e75478cf3dbdb4d6ddecb08ee8ac7d4bc13210e2
   ],
   providers: [],
   bootstrap: [AppComponent],
