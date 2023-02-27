@@ -1,3 +1,4 @@
+import { ProfileComponent } from './components/profile/profile.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -49,6 +50,7 @@ import { AboutHeaderComponent } from './components/about/about-header/about-head
     NavbarComponent,
     FooterComponent,
     AboutHeaderComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
