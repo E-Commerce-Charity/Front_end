@@ -1,0 +1,22 @@
+/* #ECA30C   mutard */
+/* #D58C13 dark mutard */
+/* #009368  green   */
+.card{
+    /* margin-right: 100px !important;  */
+    /* width:75%; */
+    border: none;
+    margin-right: 20px;
+}
+
+.icon:hover{
+    background-color: white;
+    /* height: 240px; */
+    border-radius:20px ;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/* .card-img-top:hover{
+    width:220px; 
+    height:220px;
+
+} */

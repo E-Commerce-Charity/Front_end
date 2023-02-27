@@ -21,5 +21,5 @@ export class LoginComponent {
     }
     return this.password.hasError('password') ? 'Not a valid password' : '';
   }
-  // hide = true;
+  hide = true;
 }
