@@ -1,16 +1,9 @@
-import { ProfileComponent } from './components/profile/profile.component';
-import { AboutComponent } from './components/about/about.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-
-import { CardComponent } from './card/card.component';
-import { SectionComponent } from './section/section.component';
-import { UserComponent } from './user/user.component';
-import { ProductPageComponent } from './product-page/product-page.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -34,36 +27,32 @@ import { ContactFormComponent } from './components/contact/contact-form/contact-
 import { ContactComponent } from './components/contact/contact.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CartComponent } from './components/cart/cart.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
+
 // import {MaterialExampleModule} from '../material.module';
 
 var Routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: 'cart', component: CartComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'profile', component: ProfileComponent },
+  { path: 'about', component: AppComponent },
   { path: '**', component: ErrorComponent },
 ];
+
 @NgModule({
   declarations: [
     AppComponent,
-
-    CardComponent,
-    SectionComponent,
-    UserComponent,
-    ProductPageComponent,
     SignupComponent,
     HeaderComponent,
     ErrorComponent,
-    AboutComponent,
-    ProfileComponent,
     LoginComponent,
     ContactHeaderComponent,
     ContactFormComponent,
     ContactComponent,
     CartComponent,
+    NavbarComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -88,8 +77,25 @@ var Routes: Routes = [
       useValue: { appearance: 'outline' },
     },
 
-    AppRoutingModule,
+    FormsModule,
+    RouterModule.forRoot(Routes),
+    BrowserAnimationsModule,
+    MatSlideToggleModule,
+    BrowserAnimationsModule,
+    MatAutocompleteModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    ,
   ],
+  providers: [
+    {
+      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+      useValue: { appearance: 'outline' },
+    },
+  ],
+  bootstrap: [AppComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
