@@ -453,7 +453,7 @@ section.our-mission .icon img {
 }
 
 section.our-mission .container {
-  padding: 60px 0px;
+  padding: 100px 0px;
 }
 section.our-mission .our-mission__context h2 {
   font-size: 1.2rem;
@@ -467,6 +467,15 @@ section.our-mission .our-mission__context h3 {
   font-weight: 600;
   max-width: 550px;
   color: var(--e-global-color-c90c6a5);
+}
+
+section.our-mission .our-mission__context h3:after {
+  display: block;
+  content: " ";
+  width: 80px;
+  height: 2.5px;
+  background-color: var(--e-global-color-accent);
+  margin: 10px 0px;
 }
 
 section.our-mission .our-mission__roles .roles__btns {
