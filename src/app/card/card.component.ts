@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class CardComponent {
   progress:any = 100;
-  rnVal:any=20;
-  maxVal:any=100
+  rnVal:Number=20;
+  maxVal:Number=200;
 }
