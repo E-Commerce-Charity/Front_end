@@ -27,7 +27,7 @@
               <p class="example-container">
                 <mat-form-field
                   appearance="outline"
-                  class="col-lg-12"
+                  class="col-lg-12 col-md-12"
                   id="email"
                 >
                   <mat-label>Email</mat-label>
@@ -49,17 +49,24 @@
               <p class="example-container">
                 <mat-form-field
                   appearance="outline"
-                  class="col-lg-12"
+                  class="col-lg-12 col-md-12"
                   id="password"
                 >
-                  <mat-label>Password</mat-label>
+                  <mat-label>Password*</mat-label>
 
-                  <input
-                    matInput
-                    placeholder="Please Enter Your Password"
-                    [formControl]="password"
-                    required
-                  />
+                  <input matInput [type]="hide ? 'password' : 'text'" />
+                  <button
+                    mat-icon-button
+                    matSuffix
+                    (click)="hide = !hide"
+                    [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide"
+                    id="pass_btn"
+                  >
+                    <mat-icon>{{
+                      hide ? "visibility_off" : "visibility"
+                    }}</mat-icon>
+                  </button>
                   <mat-error *ngIf="password.invalid"
                     >{{ getPasswordMessage() }}
                   </mat-error>
