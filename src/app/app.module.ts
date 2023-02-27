@@ -1,3 +1,5 @@
+import { ProfileComponent } from './components/profile/profile.component';
+import { AboutComponent } from './components/about/about.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -26,6 +28,9 @@ var Routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'profile', component: ProfileComponent },
+
   { path: '*', component: ErrorComponent },
 ];
 
@@ -35,6 +40,8 @@ var Routes: Routes = [
     SignupComponent,
     HeaderComponent,
     ErrorComponent,
+    AboutComponent,
+    ProfileComponent,
     LoginComponent,
   ],
   imports: [
@@ -58,4 +65,4 @@ var Routes: Routes = [
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
