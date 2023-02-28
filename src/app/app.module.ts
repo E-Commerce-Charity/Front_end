@@ -1,7 +1,7 @@
+import { AboutComponent } from './components/about/about.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { NgModule ,CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -61,7 +61,8 @@ import { YsectionComponent } from './components/ysection/ysection.component';
     HeaderComponent,
     NavbarComponent,
     FooterComponent,
-  
+    YsectionComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
@@ -79,8 +80,8 @@ import { YsectionComponent } from './components/ysection/ysection.component';
     ReactiveFormsModule,
     AppRoutingModule,
   ],
-  exports: [AboutHeaderComponent,CardComponent],
-  
+  exports: [AboutHeaderComponent, CardComponent],
+
   providers: [
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
