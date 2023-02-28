@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from '../../Services/cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
-  constructor() {}
+  constructor(private service: CartService) {}
   cartProducts: any[] = [
     { title: 'product1', price: 150, quantity: 5 },
     { title: 'product2', price: 200, quantity: 1 },
@@ -74,5 +75,12 @@ export class CartComponent implements OnInit {
     this.getCartTotal();
     this.getTotalQuantity();
     localStorage.setItem('cart', JSON.stringify(this.cartProducts));
+  }
+
+  addCart() {
+    this.service.getCart().subscribe((res: any) => {
+      console.log(res);
+      console.log('hello');
+    });
   }
 }

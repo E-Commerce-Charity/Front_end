@@ -59,7 +59,7 @@
 
 
 
-<div class="container">
+<div class="container mt-5">
   <div class="cartBox">
     <div class="text-danger fs-3 text-center mb-3">Shopping Cart</div>
     <div class="headCart">
@@ -105,7 +105,7 @@
           <th></th>
           <th></th>
           <th>Total Donation : {{total}} L.E or {{totalQuantity}} Meals</th>
-          <th><button class="btn btn-success">Order Now</button></th>
+          <th><button class="btn btn-success" (click)="addCart()">Order Now</button></th>
         </tr>
       </tfoot>
     </table>
