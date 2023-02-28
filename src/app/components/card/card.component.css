@@ -65,3 +65,13 @@ button.btn:hover{
     color: #ECA30C;
 
 }
+
+@media (max-width:767px) {
+    .container{
+        margin: auto;
+    }
+
+    .card{
+        margin: auto;
+    }
+}

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Input,Output,EventEmitter } from '@angular/core';
 import { CardComponent } from '../card/card.component';
 
 @Component({
@@ -7,10 +7,16 @@ import { CardComponent } from '../card/card.component';
   styleUrls: ['./product-page.component.css'],
 })
 export class ProductPageComponent {
+  title:string= "Product" ;
+
   cards: card[] = [
     { id: 1, title: 'donating', desc: 'lorem ipsm', addToCart: false },
     { id: 2, title: 'donating', desc: 'lorem ipsm', addToCart: false },
     { id: 3, title: 'donating', desc: 'lorem ipsm', addToCart: true },
+    { id: 4, title: 'donating', desc: 'lorem ipsm', addToCart: false },
+    { id: 4, title: 'donating', desc: 'lorem ipsm', addToCart: false },
+    { id: 4, title: 'donating', desc: 'lorem ipsm', addToCart: false },
+    { id: 4, title: 'donating', desc: 'lorem ipsm', addToCart: false },
     { id: 4, title: 'donating', desc: 'lorem ipsm', addToCart: false },
   ];
 

@@ -14,7 +14,7 @@ import { ContactHeaderComponent } from './components/contact/contact-header/cont
 import { ContactFormComponent } from './components/contact/contact-form/contact-form.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
-import { ProductPageComponent } from './product-page/product-page.component';
+import { ProductPageComponent } from './components/product-page/product-page.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
 var Routes: Routes = [

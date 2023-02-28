@@ -18,3 +18,6 @@ body {
   --e-global-color-749a04a: #dddddd;
   --e-global-color-2acdf8f: #d58c13;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
