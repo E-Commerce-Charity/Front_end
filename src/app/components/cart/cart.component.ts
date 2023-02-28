@@ -17,6 +17,7 @@ export class CartComponent implements OnInit {
     { title: 'product6', price: 100, quantity: 3 },
   ];
   // cartProducts: any[] = []; ////////////
+  productId: any = '63ea9e6af770a8d43f110983';
   total: any;
   totalQuantity: number = 0;
   ngOnInit(): void {

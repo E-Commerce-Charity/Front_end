@@ -30,3 +30,11 @@ export class CartService {
     );
   }
 }
+
+/*
+let params = new URLSearchParams();
+    params.set('logNamespace', logNamespace);
+
+    this._Http.get(`${API_URL}/api/v1/data/logs`, { search: params })
+}
+*/
