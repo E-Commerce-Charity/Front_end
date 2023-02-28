@@ -1,8 +1,11 @@
+<app-navbar></app-navbar>
+
 <app-header [title]="title"></app-header>
+
 <div class="productPage">
   <div class="container my-5">
 
-    
+
     <div class="search-bar">
       <div class="row my-2 d-flex justify-content-center align-items-center">
         <div class="col-md-8">
@@ -26,7 +29,7 @@
       <ng-container *ngFor="let card of cards">
 
         <div class="col-md" *ngIf="!card.addToCart">
-          
+
           <app-card [data]="card" (card)="addCart($event)"></app-card>
         </div>
       </ng-container>
@@ -36,6 +39,4 @@
   </div>
 </div>
 
-
-
-
+<app-footer></app-footer>

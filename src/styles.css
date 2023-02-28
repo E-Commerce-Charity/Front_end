@@ -17,7 +17,15 @@ body {
   --e-global-color-ea36a55: #f5f5f5;
   --e-global-color-749a04a: #dddddd;
   --e-global-color-2acdf8f: #d58c13;
+  --e-global-color-danger: #d52a13;
+  --e-global-color-danger-hover: #b42310;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
