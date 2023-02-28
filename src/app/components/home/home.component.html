@@ -2,6 +2,7 @@
 
 <!-- Path: src\app\components\home\home.component.html -->
 
+<app-navbar></app-navbar>
 <header>
   <!-- <app-navbar></app-navbar> -->
   <div class="container row m-auto">
@@ -163,6 +164,32 @@
 
 </section>
 
+<div class="products-view container">
+  <div class="row ">
+    <!-- <div class="col-md-3"></div>
+              <div class="col-md-3"></div> -->
+    <ng-container>
+
+      <div class="col-md">
+
+        <app-card></app-card>
+      </div>
+      <div class="col-md">
+
+        <app-card></app-card>
+      </div>
+      <div class="col-md">
+
+        <app-card></app-card>
+      </div>
+    </ng-container>
+    <!-- <div class="col-md"><app-card></app-card></div>
+              <div class="col-md"><app-card></app-card></div> -->
+  </div>
+
+</div>
+
+
 
 
 <section class="our-mission">
@@ -198,3 +225,5 @@
 
   </div>
 </section>
+
+<app-footer></app-footer>

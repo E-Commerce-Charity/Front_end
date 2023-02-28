@@ -1,0 +1,42 @@
+<app-navbar></app-navbar>
+
+<app-header [title]="title"></app-header>
+
+<div class="productPage">
+  <div class="container my-5">
+
+
+    <div class="search-bar">
+      <div class="row my-2 d-flex justify-content-center align-items-center">
+        <div class="col-md-8">
+          <div class="search md">
+            <i class="fa fa-search"></i>
+            <input type="text" class="form-control" placeholder="Looking for something to donate to">
+            <button class="btn">Search</button>
+          </div>
+        </div>
+        <div class="container d-flex justify-content-center col-md-2">
+          <button id="view-btn" class=" btn md my-3 w-md-25">View All</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="products-section container">
+    <div class="row ">
+      <!-- <div class="col-md-3"></div>
+                <div class="col-md-3"></div> -->
+      <ng-container *ngFor="let card of cards">
+
+        <div class="col-md" *ngIf="!card.addToCart">
+
+          <app-card [data]="card" (card)="addCart($event)"></app-card>
+        </div>
+      </ng-container>
+      <!-- <div class="col-md"><app-card></app-card></div>
+                <div class="col-md"><app-card></app-card></div> -->
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

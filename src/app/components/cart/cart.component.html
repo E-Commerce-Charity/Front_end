@@ -55,26 +55,43 @@
 
 
 
+<app-navbar></app-navbar>
 
-
+<header>
+  <div class="container position-relative header-text">
+    <div class="row ">
+      <div class="container ms-lg-5 ">
+        <div class="row text-light fw-bold">
+          <h1>Cart</h1>
+        </div>
+        <div class="row line"></div>
+        <div class="d-flex flex-row">
+          <p class="text-warning p-2">Home</p>
+          <p class="text-warning  p-2">>></p>
+          <p class="text-light p-2 fw-semibold fs-6">Cart</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 
 
 <div class="container mt-5">
   <div class="cartBox">
-    <div class="text-danger fs-3 text-center mb-3">Shopping Cart</div>
+    <h2 class="text-center mb-3">Shopping Cart 🛒</h2>
     <div class="headCart">
       <p class="fs-5 ">You have <label class="text-dannger">{{cartProducts.length}}</label> items in your cart</p>
-      <span class="btn btn-danger mb-2 p-2" (click)="clearCart()">Clear shopping cart</span>
+      <button class="btn clear" (click)="clearCart()">Clear shopping cart</button>
     </div>
     <table class="table table-striped">
       <thead>
         <tr class="text-center">
-          <th></th>
+          <th>image</th>
           <th>Name</th>
           <th>Donation value</th>
           <th style="width:15%;">Quantity</th>
           <th>Total</th>
-          <th></th>
+          <th>remove</th>
         </tr>
       </thead>
       <tbody>
@@ -82,7 +99,7 @@
           <td><img
               src="../../../assets/images/viewpoints-the-benefits-of-philanthropy-for-high-net-worth-investors-cover-1040x425.jpg"
               alt=""></td>
-          <td>{{item.title}}</td>
+          <td class="title">{{item.title}}</td>
           <td>{{item.price}} L.E</td>
           <td>
             <div class="quantity">
@@ -94,18 +111,33 @@
           </td>
           <td>{{item.price * item.quantity}} L.E</td>
           <td>
-            <button class="btn btn-danger" (click)="deleteProduct(index)">delete</button>
+            <button class="btn delete" (click)="deleteProduct(index)">
+              <i class="fas fa-trash-alt"></i>
+            </button>
           </td>
         </tr>
       </tbody>
       <tfoot>
         <tr>
+          <th>
+            <button class="btn donate"> Volunter order now </button>
+          </th>
+          <th>
+            Total quantity : <span>
+              {{totalQuantity}}
+            </span> Meals
+          </th>
           <th></th>
           <th></th>
-          <th></th>
-          <th></th>
-          <th>Total Donation : {{total}} L.E or {{totalQuantity}} Meals</th>
-          <th><button class="btn btn-success" (click)="addCart()">Order Now</button></th>
+
+          <th>Total Donation : <span>
+              {{total}}
+            </span>L.E </th>
+          <th><button class="btn order">
+              Donate Order Now
+
+
+            </button></th>
         </tr>
       </tfoot>
     </table>
@@ -113,3 +145,5 @@
   <div *ngIf="false" class="alert alert-success" role="alert"><strong>Well done!</strong> Your order is successfully
     sent</div>
 </div>
+
+<app-footer></app-footer>
