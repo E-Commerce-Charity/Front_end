@@ -2,6 +2,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -79,6 +80,7 @@ import { YsectionComponent } from './components/ysection/ysection.component';
     // FontAwesomeModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    HttpClientModule,
   ],
   exports: [AboutHeaderComponent, CardComponent],
 
