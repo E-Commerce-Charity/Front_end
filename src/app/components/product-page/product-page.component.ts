@@ -10,7 +10,7 @@ import { ProductService } from '../../Services/product.service';
 })
 export class ProductPageComponent implements OnInit {
   title: string = 'Product';
-  productId: any = '63e9fd14a34792b62f0b3b7e';
+  productId: any = '63e9ef19bb8ac8b5d36bce33';
   constructor(
     private service: CartService,
     private productService: ProductService
@@ -50,7 +50,7 @@ export class ProductPageComponent implements OnInit {
     return this.productService.getProduct().subscribe((res: any) => {
       console.log(res);
       this.cards = res.data;
-      console.log(this.cards.data);
+      console.log('this.cards', this.cards);
     });
   }
 }

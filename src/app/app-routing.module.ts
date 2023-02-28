@@ -16,6 +16,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { ThanksComponent } from './components/thanks/thanks.component';
 
 var Routes: Routes = [
   { path: '', component: HomeComponent },
@@ -26,6 +27,7 @@ var Routes: Routes = [
   { path: 'cart', component: CartComponent },
   { path: 'product', component: ProductPageComponent },
   { path: 'profile', component: ProfileComponent },
+  { path: 'thanks', component: ThanksComponent },
   { path: '**', component: ErrorComponent },
 ];
 

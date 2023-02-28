@@ -8,8 +8,8 @@ export class ProductService {
   constructor(private http: HttpClient) {}
   params = new HttpParams()
     // .set('sort', "description")
-    .set('page', '2')
-    .set('limit', '4');
+    .set('page', '1')
+    .set('limit', '6');
 
   getProduct() {
     return this.http.get('http://localhost:3000/products/', {
