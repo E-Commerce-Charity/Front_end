@@ -89,6 +89,7 @@ h2:after {
 }
 .table {
   margin-top: 10px;
+  overflow-x: scroll;
 }
 
 .table thead th {
