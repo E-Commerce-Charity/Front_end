@@ -5,6 +5,12 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
 }
+.productPage{
+  /* position: relative;
+  top: 30%; */
+
+  margin: 16px 0;
+}
 
 div.main{
     position: relative;
@@ -51,4 +57,16 @@ button.btn {
     background-color: #009368;
     color: white;
     padding: 12px;
+}
+
+@media (max-width=768px) {
+  .search-bar {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    
+  }
+  #view-btn{
+    margin: 2rem;
+  }
 }
