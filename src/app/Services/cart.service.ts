@@ -17,4 +17,16 @@ export class CartService {
       headers: this.headers,
     });
   }
+
+  addToCart(productId: any) {
+    return this.http.post(
+      'http://localhost:3000/cart',
+      {
+        productId: productId,
+      },
+      {
+        headers: this.headers,
+      }
+    );
+  }
 }
