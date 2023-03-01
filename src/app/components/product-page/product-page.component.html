@@ -9,18 +9,30 @@
     <div class="search-bar">
       <div class="row my-2 d-flex justify-content-center align-items-center">
         <div class="col-md-8">
-          <div class="search md">
+          <!-- <div class="search md">
             <i class="fa fa-search"></i>
             <input type="text" class="form-control" placeholder="Looking for something to donate to">
             <button class="btn">Search</button>
+          </div> -->
+          <div class="container d-flex justify-content-center" *ngIf="noOfPages.length > 1">
+            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+              <div class="btn-group me-2" role="group" aria-label="First group">
+                <button type="button" class="btn btn-primary" *ngFor="let item of noOfPages ,let index=index"
+                  (click)="getPage(index+1)">{{noOfPages[index]}}</button>
+              </div>
+            </div>
           </div>
         </div>
+
         <div class="container d-flex justify-content-center col-md-2">
-          <button id="view-btn" class=" btn md my-3 w-md-25">View All</button>
+          <button id="view-btn" class=" btn md my-3 w-md-25" (click)="getAllProducts()">View All</button>
         </div>
       </div>
 
     </div>
+
+
+
   </div>
   <div class="products-section container">
     <div class="row ">
@@ -29,7 +41,8 @@
       <ng-container *ngFor="let card of cards">
 
         <div class="col-md" *ngIf="!card.addToCart">
-          <app-card [data]="card" (card)="addCart($event)"></app-card>
+          <!-- <app-card [data]="card" (card)="addCart($event)"></app-card> -->
+          <app-card [data]="card"></app-card>
         </div>
       </ng-container>
       <!-- <div class="col-md"><app-card></app-card></div>

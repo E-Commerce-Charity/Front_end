@@ -6,14 +6,27 @@ import { Injectable } from '@angular/core';
 })
 export class ProductService {
   constructor(private http: HttpClient) {}
-  params = new HttpParams()
-    // .set('sort', "description")
-    .set('page', '1')
-    .set('limit', '6');
+  params = new HttpParams().set('page', '1').set('limit', '6');
 
   getProduct() {
     return this.http.get('http://localhost:3000/products/', {
-      params: this.params,
+      // params: this.params,
+      params: new HttpParams().set('page', '1').set('limit', '6'),
+    });
+  }
+
+  getPage(index: Number) {
+    return this.http.get('http://localhost:3000/products/', {
+      // params: this.params,
+      params: new HttpParams().set('page', +index).set('limit', '6'),
+    });
+  }
+
+  getAllProducts(total: any) {
+    return this.http.get('http://localhost:3000/products/', {
+      // params: this.params,
+      params: new HttpParams().set('page', '1').set('limit', total),
+      // params: new HttpParams().set('page', '1').set('limit', '6'),
     });
   }
 }

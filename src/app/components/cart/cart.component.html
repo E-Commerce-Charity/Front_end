@@ -55,7 +55,7 @@
 
 
 
-<app-navbar></app-navbar>
+<app-navbar [data]="itemsNumber"></app-navbar>
 
 <header>
   <div class="container position-relative header-text">
@@ -81,7 +81,7 @@
     <h2 class="text-center mb-3">Shopping Cart 🛒</h2>
     <div class="headCart">
       <p class="fs-5 ">You have <label class="text-dannger">{{cartProducts.length}}</label> items in your cart</p>
-      <button class="btn clear" (click)="clearCart()">Clear shopping cart</button>
+      <button class="btn clear" (click)="clearCart()" *ngIf="cartProducts.length>0">Clear shopping cart</button>
     </div>
     <table class="table table-striped" *ngIf="cartProducts.length>0">
       <thead>

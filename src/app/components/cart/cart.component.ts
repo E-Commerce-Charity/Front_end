@@ -26,6 +26,7 @@ export class CartComponent implements OnInit {
   productId: any = '63e9ef19bb8ac8b5d36bce33';
   total: any;
   totalQuantity: number = 0;
+  itemsNumber: any;
   ngOnInit(): void {
     this.getCartProducts(); /////////////////
     this.getCartTotal();
@@ -37,7 +38,9 @@ export class CartComponent implements OnInit {
     //   this.cartProducts = JSON.parse(localStorage.getItem('cart')!);
     // }
     this.service.getCart().subscribe((res: any) => {
-      console.log(res.data.cartItems);
+      console.log(res);
+      this.itemsNumber = res.numOfCartItems;
+      console.log(this.itemsNumber);
       this.cartProducts = res.data.cartItems;
       console.log('cartProducts', this.cartProducts);
       this.getCartTotal();
