@@ -26,6 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { ProductPageComponent } from './components/product-page/product-page.component';
+
 import {
   MatError,
   MatFormFieldControl,
@@ -80,7 +81,7 @@ import { YsectionComponent } from './components/ysection/ysection.component';
     // FontAwesomeModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   exports: [AboutHeaderComponent, CardComponent],
 
