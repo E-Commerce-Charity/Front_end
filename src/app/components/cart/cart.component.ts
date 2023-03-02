@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from '../../Services/cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -6,73 +7,121 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
-  constructor() {}
-  cartProducts: any[] = [
-    { title: 'product1', price: 150, quantity: 5 },
-    { title: 'product2', price: 200, quantity: 1 },
-    { title: 'product3', price: 100, quantity: 3 },
-    { title: 'product4', price: 100, quantity: 3 },
-    { title: 'product5', price: 100, quantity: 3 },
-    { title: 'product6', price: 100, quantity: 3 },
-  ];
-  // cartProducts: any[] = []; ////////////
+  constructor(private service: CartService) {}
+
+  // cartProducts: any[] = [
+  //   { title: 'product1', price: 150, quantity: 5 },
+  //   { title: 'product2', price: 200, quantity: 1 },
+  //   { title: 'product3', price: 100, quantity: 3 },
+  //   { title: 'product4', price: 100, quantity: 3 },
+  //   { title: 'product5', price: 100, quantity: 3 },
+  //   { title: 'product6', price: 100, quantity: 3 },
+  // ];
+  cartProducts: {
+    product: String;
+    quantity: Number;
+    price: Number;
+    title: String;
+  }[] = []; ////////////
+  productId: any = '63e9ef19bb8ac8b5d36bce33';
   total: any;
   totalQuantity: number = 0;
   ngOnInit(): void {
-    // this.getCartProducts(); /////////////////
+    this.getCartProducts(); /////////////////
     this.getCartTotal();
     this.getTotalQuantity();
   }
 
   getCartProducts() {
-    if ('cart' in localStorage) {
-      this.cartProducts = JSON.parse(localStorage.getItem('cart')!);
-    }
+    // if ('cart' in localStorage) {
+    //   this.cartProducts = JSON.parse(localStorage.getItem('cart')!);
+    // }
+    this.service.getCart().subscribe((res: any) => {
+      console.log(res.data.cartItems);
+      this.cartProducts = res.data.cartItems;
+      console.log('cartProducts', this.cartProducts);
+      this.getCartTotal();
+      this.getTotalQuantity();
+    });
   }
 
   getCartTotal() {
     this.total = 0;
     for (let x in this.cartProducts) {
-      this.total += this.cartProducts[x].price * this.cartProducts[x].quantity;
+      this.total +=
+        +this.cartProducts[x].price * +this.cartProducts[x].quantity;
     }
   }
   getTotalQuantity() {
     this.totalQuantity = 0;
     for (let x in this.cartProducts) {
-      this.totalQuantity += this.cartProducts[x].quantity;
+      this.totalQuantity += +this.cartProducts[x].quantity;
     }
   }
 
-  addAmount(index: number) {
-    this.cartProducts[index].quantity++;
-    this.getCartTotal();
-    this.getTotalQuantity();
-    localStorage.setItem('cart', JSON.stringify(this.cartProducts));
-  }
-  minusAmount(index: number) {
-    if (this.cartProducts[index].quantity > 1) {
-      this.cartProducts[index].quantity--;
+  addAmount(item: any) {
+    this.service.addToCart(item.product).subscribe((res: any) => {
+      console.log(res);
+      this.getCartProducts();
       this.getCartTotal();
-      this.getTotalQuantity();
-      localStorage.setItem('cart', JSON.stringify(this.cartProducts));
+    });
+
+    // this.cartProducts[index].quantity++;
+    // this.getCartTotal();
+    // this.getTotalQuantity();
+    // localStorage.setItem('cart', JSON.stringify(this.cartProducts));
+  }
+  minusAmount(item: any) {
+    if (item.quantity > 0) {
+      this.service.reduceQuantity(item.product).subscribe((res: any) => {
+        console.log(res);
+        this.getCartProducts();
+        this.getCartTotal();
+      });
+    } else {
+      item.quantity = 0;
     }
+
+    // if (this.cartProducts[index].quantity > 1) {
+    //   this.cartProducts[index].quantity--;
+    //   this.getCartTotal();
+    //   this.getTotalQuantity();
+    //   localStorage.setItem('cart', JSON.stringify(this.cartProducts));
+    // }
   }
   detectChange() {
     localStorage.setItem('cart', JSON.stringify(this.cartProducts));
     this.getCartTotal();
     this.getTotalQuantity();
+    this.getCartProducts();
   }
 
-  deleteProduct(index: number) {
-    this.cartProducts.splice(index, 1);
-    this.getCartTotal();
-    this.getTotalQuantity();
-    localStorage.setItem('cart', JSON.stringify(this.cartProducts));
+  deleteProduct(item: any) {
+    this.service.deleteProduct(item.product).subscribe((res: any) => {
+      console.log(res);
+      this.getCartProducts();
+      this.getCartTotal();
+    });
+
+    // this.cartProducts.splice(index, 1);
+    // this.getCartTotal();
+    // this.getTotalQuantity();
+    // localStorage.setItem('cart', JSON.stringify(this.cartProducts));
   }
   clearCart() {
-    this.cartProducts = [];
-    this.getCartTotal();
-    this.getTotalQuantity();
-    localStorage.setItem('cart', JSON.stringify(this.cartProducts));
+    this.service.clearCart().subscribe((res: any) => {
+      console.log(res);
+    });
+
+    // this.cartProducts = [];
+    // this.getCartTotal();
+    // this.getTotalQuantity();
+    // localStorage.setItem('cart', JSON.stringify(this.cartProducts));
+  }
+
+  addCart() {
+    this.service.getCart().subscribe((res: any) => {
+      console.log(res);
+    });
   }
 }

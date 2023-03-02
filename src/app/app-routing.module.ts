@@ -17,6 +17,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { MyGuardGuard } from './my-guard.guard';
+import { ThanksComponent } from './components/thanks/thanks.component';
 
 var Routes: Routes = [
   { path: '', component: HomeComponent },
@@ -37,6 +38,8 @@ var Routes: Routes = [
     canActivate: [MyGuardGuard],
   },
   { path: 'profile', component: ProfileComponent, canActivate: [MyGuardGuard] },
+
+  { path: 'thanks', component: ThanksComponent, canActivate: [MyGuardGuard]  },
   { path: '**', component: ErrorComponent },
 ];
 

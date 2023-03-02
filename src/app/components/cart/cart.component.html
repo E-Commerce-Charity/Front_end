@@ -76,14 +76,14 @@
 </header>
 
 
-<div class="container">
+<div class="container mt-5">
   <div class="cartBox">
     <h2 class="text-center mb-3">Shopping Cart 🛒</h2>
     <div class="headCart">
       <p class="fs-5 ">You have <label class="text-dannger">{{cartProducts.length}}</label> items in your cart</p>
       <button class="btn clear" (click)="clearCart()">Clear shopping cart</button>
     </div>
-    <table class="table table-striped">
+    <table class="table table-striped" *ngIf="cartProducts.length>0">
       <thead>
         <tr class="text-center">
           <th>image</th>
@@ -103,24 +103,25 @@
           <td>{{item.price}} L.E</td>
           <td>
             <div class="quantity">
-              <button class="btn btn-dark me-2" (click)="minusAmount(index)">-</button>
-              <input class="mx-3" type="number" (change)="detectChange()" class="form-control"
-                [(ngModel)]="item.quantity" min="1">
-              <button class="btn btn-dark ms-2" (click)="addAmount(index)">+</button>
+              <button class="btn btn-dark me-2" (click)="minusAmount(item)">-</button>
+              <!-- <input class="mx-3" type="number" (change)="detectChange()" class="form-control"
+                [(ngModel)]="item.quantity" min="1">t -->
+              <span>{{item.quantity}}</span>
+              <button class="btn btn-dark ms-2" (click)="addAmount(item)">+</button>
             </div>
           </td>
-          <td>{{item.price * item.quantity}} L.E</td>
+          <td>{{+item.price * +item.quantity}} L.E</td>
           <td>
-            <button class="btn delete" (click)="deleteProduct(index)">
+            <button class="btn delete" (click)="deleteProduct(item)">
               <i class="fas fa-trash-alt"></i>
             </button>
           </td>
         </tr>
       </tbody>
-      <tfoot>
+      <tfoot *ngIf="cartProducts.length>0">
         <tr>
           <th>
-            <button class="btn donate"> Volunter order now </button>
+            <button class="btn donate"> Donate Meals </button>
           </th>
           <th>
             Total quantity : <span>
@@ -132,8 +133,8 @@
           <th>Total Donation : <span>
               {{total}}
             </span>L.E </th>
-          <th><button class="btn order">
-              Donate Order Now
+          <th><button class="btn order" (click)=" addCart()">
+              Donate Now
 
 
             </button></th>

@@ -2,6 +2,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -36,6 +37,7 @@ import { MatInputModule } from '@angular/material/input';
 import { AboutHeaderComponent } from './components/about/about-header/about-header.component';
 import { YsectionComponent } from './components/ysection/ysection.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ThanksComponent } from './components/thanks/thanks.component';
 
 // import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -64,6 +66,7 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     YsectionComponent,
     AboutComponent,
+    ThanksComponent,
   ],
   imports: [
     BrowserModule,
