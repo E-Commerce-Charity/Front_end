@@ -61,7 +61,7 @@ export class AuthService {
         this.navigationUrls = ['/admin', '/users', '/settings'];
         break;
       case 'user':
-        this.navigationUrls = ['/profile', '/cart', '/product'];
+        this.navigationUrls = ['/profile', '/cart', '/product','/thanks'];
         break;
       default:
         this.navigationUrls = ['/admin'];
