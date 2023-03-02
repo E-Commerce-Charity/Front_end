@@ -35,6 +35,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { AboutHeaderComponent } from './components/about/about-header/about-header.component';
 import { YsectionComponent } from './components/ysection/ysection.component';
+import { HttpClientModule } from '@angular/common/http';
 
 // import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -79,6 +80,7 @@ import { YsectionComponent } from './components/ysection/ysection.component';
     // FontAwesomeModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    HttpClientModule,
   ],
   exports: [AboutHeaderComponent, CardComponent],
 

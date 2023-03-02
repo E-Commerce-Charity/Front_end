@@ -16,15 +16,26 @@ import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { MyGuardGuard } from './my-guard.guard';
 
 var Routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'signup', component: SignupComponent },
-  { path: 'about', component: AboutComponent },
+  {
+    path: 'signup',
+    component: SignupComponent,
+  },
+  {
+    path: 'about',
+    component: AboutComponent,
+  },
   { path: 'contact', component: ContactComponent },
   { path: 'cart', component: CartComponent },
-  { path: 'product', component: ProductPageComponent },
+  {
+    path: 'product',
+    component: ProductPageComponent,
+    canActivate: [MyGuardGuard],
+  },
   { path: 'profile', component: ProfileComponent },
   { path: '**', component: ErrorComponent },
 ];
