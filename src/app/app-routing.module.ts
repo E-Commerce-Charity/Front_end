@@ -30,13 +30,13 @@ var Routes: Routes = [
     component: AboutComponent,
   },
   { path: 'contact', component: ContactComponent },
-  { path: 'cart', component: CartComponent },
+  { path: 'cart', component: CartComponent, canActivate: [MyGuardGuard] },
   {
     path: 'product',
     component: ProductPageComponent,
     canActivate: [MyGuardGuard],
   },
-  { path: 'profile', component: ProfileComponent },
+  { path: 'profile', component: ProfileComponent, canActivate: [MyGuardGuard] },
   { path: '**', component: ErrorComponent },
 ];
 

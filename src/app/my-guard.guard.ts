@@ -14,13 +14,29 @@ import { AuthService } from './Services/guardAuth.service';
   providedIn: 'root',
 })
 export class MyGuardGuard implements CanActivate {
+  [x: string]: any;
   constructor(public auth: AuthService, public router: Router) {}
-  canActivate(): boolean {
-    if (!this.auth.isAuthenticated()) {
-      this.router.navigate(['login']);
+  // canActivate(): boolean {
+  //   if (!this.auth.isAuthenticated()) {
+  //     this.router.navigate(['/login']);
+  //     return false;
+  //   }
+  //   return true;
+  // }
+  canActivate(
+    next: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ):
+    | Observable<boolean | UrlTree>
+    | Promise<boolean | UrlTree>
+    | boolean
+    | UrlTree {
+    if (this.auth.isLoggedIn()) {
+      return true;
+    } else {
+      this.router.navigate(['/login']);
       return false;
     }
-    return true;
   }
 
   canActivateChild(

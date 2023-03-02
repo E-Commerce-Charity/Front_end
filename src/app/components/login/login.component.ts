@@ -1,3 +1,4 @@
+import { AuthService } from './../../Services/guardAuth.service';
 import { userService } from './../../Services/user.service';
 import { Component, OnInit } from '@angular/core';
 import {
@@ -41,7 +42,11 @@ export class LoginComponent {
   id: any;
   reactiveForm: any;
 
-  constructor(public myService: userService, private router: Router) {}
+  constructor(
+    public myService: userService,
+    public authService: AuthService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.myService.getAllUsers().subscribe(
@@ -86,21 +91,17 @@ export class LoginComponent {
     }
   }
 
+  // login(username: string, password: string): void {
+  //   this.authService.login(username, password).subscribe((response) => {
+  //     if (response && response.token) {
+  //       this.authService.setAuthToken(response.token);
+  //       // Redirect the user to the protected route
+  //     }
+  //   });
+  // }
+
   onSubmit() {
-    // Handle form submission here
-    if (this.loginForm.valid) {
-      console.log('Form submitted successfully');
-    } else {
-      console.log('Form is invalid');
-    }
-
-    if (this.myService.checkEmailNotExists(this.user.email)) {
-      this.formValid = true;
-    } else {
-      this.formValid = false;
-    }
-
-    this.myService.login(this.loginForm.value).subscribe(
+    this.authService.login(this.loginForm.value).subscribe(
       (response) => {
         // If the login is successful, redirect the user to the home page
         // and store the user's token in local storage
@@ -119,6 +120,11 @@ export class LoginComponent {
         // localStorage.setItem('id', response.user._id);
         // Navigate to home page or some other protected route
         this.router.navigateByUrl('/', { replaceUrl: true });
+        if (response && response.token) {
+          this.authService.setAuthToken(response.token);
+          // Redirect the user to the protected route
+          this.authService.setNavigationUrls(response.user.role);
+        }
       },
       (error) => {
         // If the login fails, display an error message
@@ -127,19 +133,61 @@ export class LoginComponent {
         console.log(error.error.message);
       }
     );
-  }
 
-  getErrorMessage() {
-    if (this.email.hasError('emailExistsValidator')) {
-      return 'email is not exist';
+    // Handle form submission here
+    if (this.loginForm.valid) {
+      console.log('Form submitted successfully');
+    } else {
+      console.log('Form is invalid');
     }
-    return '';
+
+    if (this.myService.checkEmailNotExists(this.user.email)) {
+      this.formValid = true;
+    } else {
+      this.formValid = false;
+    }
+
+    //   this.myService.login(this.loginForm.value).subscribe(
+    //   //   (response) => {
+    //   //     // If the login is successful, redirect the user to the home page
+    //   //     // and store the user's token in local storage
+    //   //     localStorage.setItem('token', response.token);
+    //   //     console.log(response);
+
+    //   //     localStorage.setItem('usertoken', this.usertoken);
+    //   //     this.token = response.user.token;
+
+    //   //     this.localToken = localStorage.getItem('token');
+    //   //     console.log(this.localToken);
+    //   //     this.id = response.user._id;
+    //   //     localStorage.setItem('id', response.user._id);
+
+    //   //     // this.id = response.user._id;
+    //   //     // localStorage.setItem('id', response.user._id);
+    //   //     // Navigate to home page or some other protected route
+    //   //     this.router.navigateByUrl('/', { replaceUrl: true });
+    //   //   },
+    //   //   (error) => {
+    //   //     // If the login fails, display an error message
+    //   //     console.log('Login failed', error);
+    //   //     this.emailRes = error.error.message;
+    //   //     console.log(error.error.message);
+    //   //   }
+    //   // );
+    // }
+
+    // getErrorMessage() {
+    //   if (this.email.hasError('emailExistsValidator')) {
+    //     return 'email is not exist';
+    //   }
+    //   return '';
+    // }
+    // // getPasswordMessage() {
+    // //   if (this.password.hasError('required')) {
+    // //     return 'You must enter a value';
+    // //   }
+    // //   return this.password.hasError('password') ? 'Not a valid password' : '';
+    // // }
+    // // hide = true;
   }
-  // getPasswordMessage() {
-  //   if (this.password.hasError('required')) {
-  //     return 'You must enter a value';
-  //   }
-  //   return this.password.hasError('password') ? 'Not a valid password' : '';
-  // }
-  // hide = true;
 }
