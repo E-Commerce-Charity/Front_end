@@ -37,6 +37,8 @@ export class AuthService {
 
   logout(): void {
     localStorage.removeItem('authToken');
+    this.isAuthenticate = false;
+    console.log('authToken deleted');
   }
 
   setAuthToken(authToken: string): void {
@@ -61,7 +63,7 @@ export class AuthService {
         this.navigationUrls = ['/admin', '/users', '/settings'];
         break;
       case 'user':
-        this.navigationUrls = ['/profile', '/cart', '/product','/thanks'];
+        this.navigationUrls = ['/profile', '/cart', '/product', '/thanks'];
         break;
       default:
         this.navigationUrls = ['/admin'];

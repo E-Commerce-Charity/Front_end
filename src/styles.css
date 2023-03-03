@@ -29,3 +29,12 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+.ngx-pagination li {
+  color: #213430;
+}
+
+.ngx-pagination li.current {
+  color: #fff;
+  background-color: #009368 !important;
+}

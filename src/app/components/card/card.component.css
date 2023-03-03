@@ -1,40 +1,47 @@
 div.card,
 .img {
   border: 0;
-  border-radius: 8px;
+  border-radius: 7px;
+}
+
+div.card {
+  border: 0;
+  border-radius: 7px;
+  box-shadow: 0px 0px 22px #e6e3e362, -20px -20px 62px #ffffffd2;
 }
 
 .img,
 img {
   width: 100%;
-  border-top-right-radius: 8px;
-  border-top-left-radius: 8px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
 }
 
 div.card:hover {
-  box-shadow: 0 0 9px -4px black;
+  box-shadow: 0px 0px 16px #cac8c862, -20px -20px 62px #ffffffd2;
   cursor: pointer;
 }
 div.img {
   position: relative;
+  border-bottom: 0.5px solid var(--e-global-color-749a04a);
 }
 .img span.label-text {
   position: absolute;
   bottom: -10px;
   font-size: 14px;
-  left: 15%;
+  left: 4%;
   display: inline-block;
-  background: #009368;
+  background: var(--e-global-color-secondary);
   padding: 4px 20px;
   font-weight: bold;
   color: white;
   border: 0;
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
 #progress {
   position: relative;
-  background-color: #009368;
+  background-color: var(--e-global-secondary);
   padding: 8px 16px;
   bottom: 8px;
   right: 10px;
@@ -43,7 +50,7 @@ div.img {
 .progress {
   position: relative;
   background-color: #009368;
-  padding: 9px;
+  padding: 10px;
 }
 
 .donation-num p {
@@ -75,4 +82,81 @@ button.btn:hover {
   .card {
     margin: auto;
   }
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: space-between;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.progress-container .goal_price {
+  align-self: end;
+  color: var(--e-global-color-primary);
+  font-size: 0.9rem;
+}
+
+.progress-container .progress-wraper {
+  width: 100%;
+  height: 20px;
+  background-color: var(--e-global-color-749a04a);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.progress-container .progress-wraper .progress-bar {
+  height: 100%;
+  width: 80%;
+  background-color: var(--e-global-color-secondary);
+  transition: width 0.5s ease;
+}
+
+.progress-container .progress-wraper .progress-bar .progress-value {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  color: var(--e-global-color-c90c6a5);
+  font-size: 0.8rem;
+  padding: 5px 5px;
+  line-height: 15px;
+}
+
+.progress-container .progress-wraper .progress__value {
+  color: var(--e-global-color-text);
+  font-size: 0.8rem;
+}
+.progress-container span.value {
+  text-align: left;
+  padding-top: 1px;
+}
+
+h2 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: var(--e-global-color-primary);
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+}
+
+p.card-text {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--e-global-color-text);
+  margin-bottom: 1rem;
+}
+
+.donation-num p {
+  font-size: 0.9em;
+  color: var(--e-global-color-primary);
+}
+
+.donation-num span {
+  color: var(--e-global-color-accent);
 }

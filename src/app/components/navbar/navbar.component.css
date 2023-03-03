@@ -180,3 +180,89 @@ body {
   z-index: 5;
   margin-top: 0px;
 }
+
+.cart {
+  position: relative;
+}
+.cart-icon {
+  color: #fff;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.cart-icon + span {
+  position: absolute;
+  right: 35px;
+  top: -10px;
+  display: inline-block;
+}
+
+a:hover .cart-icon {
+  color: #cb9712;
+}
+
+.profile.dropdown1 a {
+  display: inline-block;
+}
+
+.profile.dropdown1 .mat-icon {
+  color: #fff;
+  font-size: 35px;
+  width: 35px;
+  cursor: pointer;
+  height: 40px;
+  transition: all 0.3s linear;
+}
+.profile .dropdown-toggle::after {
+  margin-left: 0em;
+  vertical-align: 0.9em;
+  display: inline-block;
+  content: "";
+  color: transparent;
+}
+
+.btn.logOut {
+  padding: 0px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: none !important;
+  border-radius: 0px 0px 10px 10px !important;
+  text-align: left;
+  padding: 10px 0px !important;
+}
+
+.btn.logOut a {
+  padding: 0 !important;
+  margin: 0 !important;
+  text-align: left;
+}
+.btn.logOut:hover a {
+  background: transparent;
+  color: #cb9712 !important;
+}
+
+.btn.logOut:hover {
+  background: transparent !important;
+}
+.logout-icon {
+  color: #fff;
+  font-size: 17px;
+  gap: 0px;
+  display: flex;
+}
+
+.btn.logOut:hover .logout-icon {
+  color: #cb9712;
+}
+.btn.logOut .logout-icon mat-icon {
+  font-size: 25px;
+}
+.btn.logOut:hover .logout-icon mat-icon {
+  color: #cb9712;
+}
+
+.active {
+  color: #cb9712;
+}
