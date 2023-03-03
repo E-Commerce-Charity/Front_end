@@ -7,10 +7,7 @@ import { Injectable } from '@angular/core';
 export class CartService {
   constructor(private http: HttpClient) {}
   auth_token =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2U4MjVkZTAwZmVlNGMzZWZkM2I5M2MiLCJpYXQiOjE2Nzc1MzgzNjF9.vqmRJ1rfq5k2cKoWOq5iDLLz65BsJTW7PWk-SrFCmuk';
-
-  // auth_token =
-  //   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2U5MzNjZmJmOGU0OWY0OGM0OGY3MGUiLCJpYXQiOjE2Nzc2Mjk1NzZ9.l4t-drFSu5anoyrgcNN1QVjFCSDCc4v7WENCPiy305Y';
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2U5NGQ0OWIyNDk3MjdhNDcxMTNmZTMiLCJpYXQiOjE2Nzc3OTg5NzB9.nXV59XiPNLngidCjgcPAOQsRrXadhsrV_veLDml6xoI';
   headers = new HttpHeaders({
     'Content-Type': 'application/json',
     Authorization: `Bearer ${this.auth_token}`,
@@ -56,21 +53,4 @@ export class CartService {
       headers: this.headers,
     });
   }
-
-  // sold(id:any){
-  //   return this.http.put(`localhost:3000/products/${id}`,{
-
-  //       sold:
-
-  //     },{})
-
-  // }
 }
-
-/*
-let params = new URLSearchParams();
-    params.set('logNamespace', logNamespace);
-
-    this._Http.get(`${API_URL}/api/v1/data/logs`, { search: params })
-}
-*/

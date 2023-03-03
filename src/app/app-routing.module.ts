@@ -27,7 +27,6 @@ var Routes: Routes = [
   { path: 'cart', component: CartComponent },
   { path: 'product', component: ProductPageComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'thanks', component: ThanksComponent },
   { path: '**', component: ErrorComponent },
 ];
 

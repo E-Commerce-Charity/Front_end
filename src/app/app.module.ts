@@ -3,6 +3,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -37,6 +38,7 @@ import { MatInputModule } from '@angular/material/input';
 import { AboutHeaderComponent } from './components/about/about-header/about-header.component';
 import { YsectionComponent } from './components/ysection/ysection.component';
 import { ThanksComponent } from './components/thanks/thanks.component';
+import { HomeCardComponent } from './components/home-card/home-card.component';
 
 // import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -66,6 +68,7 @@ import { ThanksComponent } from './components/thanks/thanks.component';
     YsectionComponent,
     AboutComponent,
     ThanksComponent,
+    HomeCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -83,6 +86,7 @@ import { ThanksComponent } from './components/thanks/thanks.component';
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
+    NgxPaginationModule,
   ],
   exports: [AboutHeaderComponent, CardComponent],
 

@@ -538,3 +538,82 @@ section.our-mission .our-mission__roles .roles__btns .btn:last-of-type:hover a {
     width: 100%;
   }
 }
+
+div.card,
+.img {
+  border: 0;
+  border-radius: 8px;
+}
+
+.img,
+img {
+  width: 100%;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+}
+
+div.card:hover {
+  box-shadow: 0 0 9px -4px black;
+  cursor: pointer;
+}
+div.img {
+  position: relative;
+}
+.img span.label-text {
+  position: absolute;
+  bottom: -10px;
+  font-size: 14px;
+  left: 15%;
+  display: inline-block;
+  background: #009368;
+  padding: 4px 20px;
+  font-weight: bold;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+}
+
+#progress {
+  position: relative;
+  background-color: #009368;
+  padding: 8px 16px;
+  bottom: 8px;
+  right: 10px;
+}
+
+.progress {
+  position: relative;
+  background-color: #009368;
+  padding: 9px;
+}
+
+.donation-num p {
+  font-size: 0.9em;
+  font-weight: bold;
+  line-height: 0.5;
+  padding: 0;
+  margin-bottom: 2px;
+}
+
+button.btn {
+  font-weight: bold;
+  padding: 8px 14px;
+  outline: none;
+  color: white;
+}
+
+button.btn:hover {
+  border: 1px solid #eca30c;
+  background-color: white;
+  color: #eca30c;
+}
+
+@media (max-width: 767px) {
+  .container {
+    margin: auto;
+  }
+
+  .card {
+    margin: auto;
+  }
+}

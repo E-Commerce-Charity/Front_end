@@ -121,7 +121,7 @@
       <tfoot *ngIf="cartProducts.length>0">
         <tr>
           <th>
-            <button class="btn donate"> Donate Meals </button>
+            <button class="btn donate" (click)="orderMeals()"> Donate Meals </button>
           </th>
           <th>
             Total quantity : <span>
@@ -133,10 +133,8 @@
           <th>Total Donation : <span>
               {{total}}
             </span>L.E </th>
-          <th><button class="btn order" (click)=" addCart()">
+          <th><button class="btn order" (click)="orderMoney()">
               Donate Now
-
-
             </button></th>
         </tr>
       </tfoot>
