@@ -31,6 +31,7 @@ var Routes: Routes = [
     component: AboutComponent,
   },
   { path: 'contact', component: ContactComponent },
+
   { path: 'cart', component: CartComponent, canActivate: [MyGuardGuard] },
   {
     path: 'product',

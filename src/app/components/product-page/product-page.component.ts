@@ -9,49 +9,54 @@ import { ProductService } from '../../Services/product.service';
   styleUrls: ['./product-page.component.css'],
 })
 export class ProductPageComponent implements OnInit {
+  cards: any;
+  page: number = 1;
+  count: number = 0;
+  tableSize: number = 6;
+  tableSizes: any = [3, 6, 9, 12];
+
   title: string = 'Product';
-  productId: any = '63e9ef19bb8ac8b5d36bce33';
+  numberOfPages: any;
+  noOfPages: Number[] = [];
+
   constructor(
     private service: CartService,
     private productService: ProductService
   ) {}
 
   ngOnInit(): void {
-    this.getProducts();
+    this.getAllProducts();
   }
-  cards: any = [];
-  // cards: card[] = [
-  //   { id: 1, title: 'donating', desc: 'lorem ipsm', addToCart: false },
-  //   { id: 2, title: 'donating', desc: 'lorem ipsm', addToCart: false },
-  //   { id: 3, title: 'donating', desc: 'lorem ipsm', addToCart: true },
-  //   { id: 4, title: 'donating', desc: 'lorem ipsm', addToCart: false },
-  //   { id: 4, title: 'donating', desc: 'lorem ipsm', addToCart: false },
-  //   { id: 4, title: 'donating', desc: 'lorem ipsm', addToCart: false },
-  //   { id: 4, title: 'donating', desc: 'lorem ipsm', addToCart: false },
-  //   { id: 4, title: 'donating', desc: 'lorem ipsm', addToCart: false },
-  // ];
 
   cartProducts: any[] = [];
   addToCart: boolean = true;
+  productsNo: any;
+  limit: any;
+  totalNumber: any;
+  SoldCard: any;
 
-  addCart(event: any) {
-    this.service.addToCart(this.productId).subscribe((res: any) => {
-      console.log(res);
+  getPage(index: Number) {
+    return this.productService.getPage(index).subscribe((res: any) => {
+      this.cards = res.data;
     });
-
-    // console.log(event);
-    // if ('card' in localStorage) {
-    //   this.cartProducts.push(event);
-    // }
-    // localStorage.setItem('card', JSON.stringify(event));
   }
 
-  getProducts() {
-    return this.productService.getProduct().subscribe((res: any) => {
-      console.log(res);
-      this.cards = res.data;
-      console.log('this.cards', this.cards);
-    });
+  getAllProducts() {
+    return this.productService
+      .getAllProducts(this.totalNumber)
+      .subscribe((res: any) => {
+        this.cards = res.data;
+      });
+  }
+
+  onTableDataChange(event: any) {
+    this.page = event;
+    this.getAllProducts();
+  }
+  onTableSizeChange(event: any): void {
+    this.tableSize = event.target.value;
+    this.page = 1;
+    this.getAllProducts();
   }
 }
 
