@@ -539,7 +539,7 @@ section.our-mission .our-mission__roles .roles__btns .btn:last-of-type:hover a {
   }
 }
 
-div.card,
+.products-view div.card,
 .img {
   border: 0;
   border-radius: 8px;
@@ -552,11 +552,11 @@ img {
   border-top-left-radius: 8px;
 }
 
-div.card:hover {
+.products-view div.card:hover {
   box-shadow: 0 0 9px -4px black;
   cursor: pointer;
 }
-div.img {
+.products-view div.img {
   position: relative;
 }
 .img span.label-text {
@@ -640,7 +640,7 @@ button.btn:hover {
   padding: 0;
   margin-bottom: 2px;
 }
-div.card .progress-container {
+.products-view div.card .progress-container {
   display: flex;
   justify-content: space-between;
   align-items: space-between;
@@ -717,42 +717,42 @@ p.card-text {
   color: var(--e-global-color-accent);
 }
 
-div.card,
-.img {
+.products-view div.card,
+.products-view .img {
   border: 0;
   border-radius: 7px;
   position: relative;
   transition: all 0.5s linear;
 }
 
-div.card {
+.products-view div.card {
   border: 0;
   border-radius: 7px;
   box-shadow: 0px 0px 22px #e6e3e362, -20px -20px 62px #ffffffd2;
 }
 
-.img,
-img {
+.products-view .img,
+.products-view img {
   width: 100%;
   border-top-right-radius: 7px;
   border-top-left-radius: 7px;
   transition: all 0.5s linear;
 }
 
-div.card:hover {
+.products-view div.card:hover {
   box-shadow: 0px 0px 16px #cac8c862, -20px -20px 62px #ffffffd2;
   cursor: pointer;
 }
 
-div.card:hover div.img img {
+.products-view div.card:hover div.img img {
   -webkit-filter: sepia(25%) hue-rotate(10deg) saturate(203.8%);
   filter: sepia(25%) hue-rotate(10deg) saturate(203.8%);
 }
-div.img {
+.products-view div.img {
   position: relative;
   border-bottom: 0.5px solid var(--e-global-color-749a04a);
 }
-.img span.label-text {
+.products-view .img span.label-text {
   position: absolute;
   bottom: -10px;
   font-size: 14px;
@@ -991,4 +991,9 @@ div.user-detail p.designation {
   z-index: 1;
   width: 120px;
   height: 120px;
+}
+
+.page-section.ourevents .card {
+  border: none;
+  border-radius: 10px;
 }
