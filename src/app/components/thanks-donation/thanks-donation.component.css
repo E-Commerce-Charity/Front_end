@@ -1,0 +1,58 @@
+.alert {
+  /* height: 50%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 8em;
+  color: black;
+}
+.alert h1 {
+  font-size: 2rem;
+}
+.alert .overlay {
+  background: url("../../../assets/1643746542_53-adonius-club-p-listopad-na-prozrachnom-fone-63.png");
+  height: 300px;
+  position: absolute;
+  z-index: -1;
+  width: 40%;
+  background-size: cover;
+  background-position: 0% 0%;
+  left: -200px;
+  top: 0px;
+  background-repeat: no-repeat;
+}
+.overlay2 {
+  background: url("../../../assets/1643746542_53-adonius-club-p-listopad-na-prozrachnom-fone-63.png");
+  height: 500px;
+  position: absolute;
+  z-index: -1;
+  width: 50%;
+  background-size: cover;
+  background-position: 0% 0%;
+  left: 363px;
+  top: 0px;
+  background-repeat: no-repeat;
+}
+
+.img1 {
+  width: 60%;
+  background-image: url("../../../assets/thankyousign.JPG");
+  background-color: #cccccc; /* Used if the image is unavailable */
+  height: 70%; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+  margin: 0 auto;
+}
+.paragraph {
+  margin-top: 0.5em;
+  font-size: 2rem;
+  margin-bottom: 1em;
+}
+.paragraph svg {
+  width: 40px;
+  height: 40px;
+  margin-left: 0.7em;
+  fill: #cb9712;
+}

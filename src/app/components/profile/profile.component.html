@@ -19,118 +19,212 @@
 </header>
 
 
-
 <!-- <div class="input-group mb-3">
   <label class="input-group-text" for="inputGroupFile01">Upload</label>
   <input type="file" class="form-control w-25" id="inputGroupFile01">
 </div> -->
 
-
-<section class="page-section  mb-5 " id="team">
-  <div class="card mb-3 mb-5 " style="border:none; background-color:#F5F5F5;">
-    <div class="row g-0 ms-5 mb-4" *ngIf="user">
-
+<section class="page-section mb-5" id="team">
+  <div class="card mb-3 mb-5" style="border: none; background-color: #f5f5f5">
+    <div class="row g-0 ms-5 mb-4" *ngIf="userId">
       <div class="container">
         <div class="card-body mt-3">
-          <h5 class="card-title fw-bold text-success fs-1">Welcome <span class="text-dark fs-3">{{user.name}} </span>  </h5>
-          <p class="card-text fs-4">Manage your details, view your tier status and change your password</p>
+          <h5 class="card-title fw-bold text-success fs-1">
+            Welcome <span class="text-dark fs-3">{{ name }} </span>
+          </h5>
+          <p class="card-text fs-4">
+            Manage your details, view your tier status and change your password
+          </p>
         </div>
-        <div class="row line ms-3 w-75 "></div>
+        <div class="row line ms-3 w-75"></div>
       </div>
 
-      <div class="container d-flex ms-5" style=" width:800px">
-        <div class="row flex-column ms-5 me-5 mt-5 w-50" >
-
+      <div class="container contain d-flex" style="width: 800px">
+        <div class="row flex-column tabs me-5 mt-5 w-50">
           <!-- Picture -->
           <!-- <img src="../../../assets/User-avatar.svg .png" class="rounded  mb-3" style="width: 150px;"
             alt="Avatar" /> -->
           <!-- <h5 class="card-title fw-bold ms-2 mb-3">Welcome </h5> -->
 
           <!-- Nav tabs -->
-          <ul class="nav nav-tabs flex-column mt-2" >
+          <ul class="nav nav-tabs flex-column mt-2">
             <li class="nav-item">
-              <a class="nav-link active text-success fs-4 fw-bold" data-bs-toggle="tab" href="#one">Profile Details </a>
+              <a
+                class="nav-link active text-success fs-4 fw-bold"
+                data-bs-toggle="tab"
+                href="#one"
+                >Profile Details
+              </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-success fs-4 fw-bold" data-bs-toggle="tab" href="#msg">Edit Profile</a>
+              <a
+                class="nav-link text-success fs-4 fw-bold"
+                data-bs-toggle="tab"
+                href="#msg"
+                >Edit Profile</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link text-success fs-4 fw-bold" data-bs-toggle="tab" href="#pro">Orders</a>
+              <a
+                class="nav-link text-success fs-4 fw-bold"
+                data-bs-toggle="tab"
+                href="#pro"
+                >Orders</a
+              >
             </li>
           </ul>
         </div>
 
         <!-- Profile Details Tap -->
-        <div class="tab-content container mt-5 me-4 ">
+        <div class="tab-content container mt-5 me-4">
           <div class="tab-pane container row active mt-5" id="one">
             <form class="mt-5 rounded-5">
-              <div class="container mt-5 " >
-                <div class="mb-3 ">
-                  <label for="exampleInputEmail1" class="form-label fw-bold me-5 ">UserName</label>
-                  <label for="exampleInputEmail1" class="form-label ms-5">{{user.name}}</label>
-                  <hr>
+              <div class="container mt-5">
+                <div class="mb-3">
+                  <label
+                    for="exampleInputEmail1"
+                    class="form-label fw-bold me-5"
+                    >UserName</label
+                  >
+                  <label for="exampleInputEmail1" class="form-label ms-5">{{
+                    name
+                  }}</label>
+                  <hr />
                 </div>
 
                 <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label fw-bold me-5">Phone Number</label>
-                  <label for="exampleInputEmail1" class="form-label ms-1">{{user.phone}}</label>
-                  <hr>
+                  <label
+                    for="exampleInputEmail1"
+                    class="form-label fw-bold me-5"
+                    >Phone Number</label
+                  >
+                  <label for="exampleInputEmail1" class="form-label ms-1">{{
+                    phone
+                  }}</label>
+                  <hr />
                 </div>
 
                 <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label fw-bold me-5">Email address</label>
-                  <label for="exampleInputEmail1" class="form-label ms-3 ">{{user.email}}</label>
-                  <hr>
+                  <label
+                    for="exampleInputEmail1"
+                    class="form-label fw-bold me-5"
+                    >Email address</label
+                  >
+                  <label for="exampleInputEmail1" class="form-label ms-3">{{
+                    email
+                  }}</label>
+                  <hr />
                 </div>
               </div>
             </form>
           </div>
 
           <!-- Edit Profile Tab  -->
-          <div class="tab-pane container row fade  mt-3" id="msg">
+          <div class="tab-pane container row fade mt-3" id="msg">
             <form class="mt-5 rounded-5">
-              <div class="container ">
-                <div class="mb-3 ">
-                  <label for="exampleInputEmail1" class="form-label fw-bold ">UserName</label>
-                  <input type="text" class="form-control w-75" id="name" la-aria-describedby="name" 
-                   >
+              <div class="container">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label fw-bold"
+                    >UserName</label
+                  >
+                  <input
+                    name="nameInput"
+                    type="text"
+                    class="form-control w-75"
+                    id="name"
+                    la-aria-describedby="name"
+                    value="{{ name }}"
+                    [(ngModel)]="name"
+                  />
                 </div>
 
                 <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label fw-bold ">Phone Number</label>
-                  <input type="text" id="phone" class="form-control w-75" data-mdb-input-mask="+48 999-999-999"
-                   />
-                  <label class="form-text" for="phone">Phone number with country code</label>
+                  <label for="exampleInputEmail1" class="form-label fw-bold"
+                    >Phone Number</label
+                  >
+                  <input
+                    name="phoneInput"
+                    type="text"
+                    id="phone"
+                    class="form-control w-75"
+                    data-mdb-input-mask="+48 999-999-999"
+                    value="{{ phone }}"
+                    [(ngModel)]="phone"
+                  />
+                  <label class="form-text" for="phone"
+                    >Phone number with country code</label
+                  >
                 </div>
 
                 <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label fw-bold ">Email address</label>
-                  <input type="email" class="form-control w-75" id="exampleInputEmail1" aria-describedby="emailHelp"
-                   >
-                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                </div>
-
-                <div class="mb-3">
-                  <label for="inputPassword5" class="form-label fw-bold ">Password</label>
-                  <input type="password" id="inputPassword5" class="form-control w-75"
-                    aria-describedby="passwordHelpBlock" >
-                  <div id="passwordHelpBlock" class="form-text">
-                    Your password must be 8-20 characters long,and must not contain spaces, special characters, or
-                    emoji.
+                  <label for="exampleInputEmail1" class="form-label fw-bold"
+                    >Email address</label
+                  >
+                  <input
+                    name="emailInput"
+                    type="email"
+                    class="form-control w-75"
+                    id="email"
+                    aria-describedby="emailHelp"
+                    value="{{ email }}"
+                    [(ngModel)]="email"
+                  />
+                  <div id="emailHelp" class="form-text">
+                    We'll never share your email with anyone else.
                   </div>
                 </div>
 
+                <div class="mb-3">
+                  <label for="inputPassword5" class="form-label fw-bold"
+                    >Password</label
+                  >
+                  <input
+                    name="passwordInput"
+                    type="password"
+                    id="password"
+                    class="form-control w-75"
+                    aria-describedby="passwordHelpBlock"
+                    value="{{ password }}"
+                    [(ngModel)]="password"
+                  />
+                  <div id="passwordHelpBlock" class="form-text">
+                    Your password must be 8-20 characters long,and must not
+                    contain spaces, special characters, or emoji.
+                  </div>
+                </div>
               </div>
               <div class="container mb-5 d-flex">
-                <button type="submit" class="btn btn-success ms-5 fw-bold" value="Update" (click)="update()">UPDATE INFO</button>
+                <button
+                  type="submit"
+                  class="btn btn-success ms-5 fw-bold"
+                  value="Update"
+                  (click)="update()"
+                >
+                  UPDATE INFO
+                </button>
               </div>
             </form>
-
           </div>
 
-          <!-- Orders Tab  -->  
-          <div class="tab-pane container fade  mt-3" id="pro">This is a profile tab.</div>
-
+          <!-- Orders Tab  -->
+          <div
+            class="tab-pane container fade mt-3"
+            id="pro"
+            *ngFor="let d of dataOrder; let i = index"
+          >
+            <!-- <h1>{{ d }}</h1> -->
+            <div
+              class="alert alert-warning orders"
+              *ngFor="let CartItem of d.cartItems"
+            >
+              <div class="order_title">
+                <p>{{ CartItem.product.title }}</p>
+                <h4>{{ CartItem.price }}$</h4>
+              </div>
+              <img src="http://{{ CartItem.product.imageCover }}" alt="" />
+            </div>
+            <!-- <h1>hi</h1> -->
+          </div>
         </div>
       </div>
     </div>

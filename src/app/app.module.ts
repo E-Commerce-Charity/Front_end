@@ -42,6 +42,7 @@ import { ThanksComponent } from './components/thanks/thanks.component';
 import { HomeCardComponent } from './components/home-card/home-card.component';
 import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
+import { ThanksDonationComponent } from './components/thanks-donation/thanks-donation.component';
 
 // import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -74,6 +75,7 @@ import { ResetpasswordComponent } from './components/resetpassword/resetpassword
     HomeCardComponent,
     ForgetpasswordComponent,
     ResetpasswordComponent,
+    ThanksDonationComponent,
   ],
   imports: [
     BrowserModule,
