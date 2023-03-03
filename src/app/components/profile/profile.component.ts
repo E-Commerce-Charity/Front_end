@@ -1,5 +1,6 @@
+import { ProfileService } from './../../Services/profile.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, TitleStrategy } from '@angular/router';
 import { userService } from 'src/app/Services/user.service';
 
 @Component({
@@ -19,7 +20,6 @@ export class ProfileComponent implements OnInit {
   orders: any;
   ordersPhoto: any;
   dataOrder: any;
-
   constructor(route: ActivatedRoute, private myService: userService) {
     // this.id = route.snapshot.params['id'];
     // this.id = '63ff3bd58146188ca3df5253';

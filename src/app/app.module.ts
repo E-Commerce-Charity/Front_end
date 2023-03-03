@@ -27,6 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { ProductPageComponent } from './components/product-page/product-page.component';
+
 import {
   MatError,
   MatFormFieldControl,
@@ -94,6 +95,8 @@ import { ThanksDonationComponent } from './components/thanks-donation/thanks-don
     HttpClientModule,
     NgxPaginationModule,
     RouterModule.forRoot([]),
+
+
   ],
   exports: [AboutHeaderComponent, CardComponent],
 
