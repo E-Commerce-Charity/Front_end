@@ -1,42 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
 
-  <title>Document</title>
-</head>
-
-<body>
-  <div class="header">
-    <div class="container">
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <div>
-            <img width="133" height="40"
-              src="https://harity.templatekit.co/wp-content/uploads/sites/49/2022/07/cropped-harity-logo.png"
-              class="attachment-full size-full wp-image-2185" alt="" loading="lazy" />
-          </div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse mx-auto" id="navbarNavDropdown">
-            <ul class="navbar-nav mx-auto">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" routerLink="/" routerLinkActive="active"
-                  [routerLinkActiveOptions]={exact:true}>Home</a>
-              </li>
-              <!-- <li class="nav-item">
+  <body>
+    <div class="header">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container-fluid">
+            <div>
+              <img
+                width="133"
+                height="40"
+                src="https://harity.templatekit.co/wp-content/uploads/sites/49/2022/07/cropped-harity-logo.png"
+                class="attachment-full size-full wp-image-2185"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div
+              class="collapse navbar-collapse mx-auto"
+              id="navbarNavDropdown"
+            >
+              <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    aria-current="page"
+                    routerLink="/"
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                    >Home</a
+                  >
+                </li>
+                <!-- <li class="nav-item">
                 <a class="nav-link" routerLink="/">Causes</a>
               </li> -->
-              <li class="nav-item">
-                <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
-              </li>
+                <!-- <h1>hello</h1> -->
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    routerLink="/about"
+                    routerLinkActive="active"
+                    >About</a
+                  >
+                </li>
 
-              <!-- <li class="nav-item dropdown1">
+                <!-- <li class="nav-item dropdown1">
                 <a class="dropbtn nav-link dropdown-toggle">Pages </a>
 
                 <div class="dropdown-content">
@@ -46,58 +72,72 @@
                 </div>
               </li> -->
 
-              <li class="nav-item">
-                <a class="nav-link" routerLink="/product" routerLinkActive="active">products</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contacts</a>
-              </li>
-              <li class="nav-item cart" *ngIf="logged">
-                <a class="nav-link" routerLink="/cart" routerLinkActive="active">
-                  <mat-icon class="position-relative cart-icon">shopping_cart</mat-icon>
-                  <span class="position-absolute">
-                    {{numOfCartItems}}
-                  </span>
-                </a>
-              </li>
-            </ul>
-
-            <button type="button" class="btn" *ngIf="!logged">
-              <a class="btn-primary" routerLink="/login" routerLinkActive="active">
-                Donate Now <mat-icon>favorite</mat-icon>
-              </a>
-            </button>
-
-            <li class="profile nav-item dropdown1" *ngIf="logged">
-
-
-              <a class="dropbtn nav-link dropdown-toggle">
-                <mat-icon>
-                  account_circle
-                </mat-icon>
-              </a>
-              <div class="dropdown-content">
-                <a class="dropdown-item" routerLink="/profile">your profile</a>
-                <button class="logOut btn btn-primary" (click)="logout()">
-                  <a>
-                    <span class="logout-icon">
-                      <mat-icon>
-                        logout
-                      </mat-icon>
-
-                      Logout
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    routerLink="/product"
+                    routerLinkActive="active"
+                    >products</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    routerLink="/contact"
+                    routerLinkActive="active"
+                    >Contacts</a
+                  >
+                </li>
+                <li class="nav-item cart" *ngIf="logged">
+                  <a
+                    class="nav-link"
+                    routerLink="/cart"
+                    routerLinkActive="active"
+                  >
+                    <mat-icon class="position-relative cart-icon"
+                      >shopping_cart</mat-icon
+                    >
+                    <span class="position-absolute">
+                      {{ numOfCartItems }}
                     </span>
+                  </a>
+                </li>
+              </ul>
 
-                  </a></button>
-              </div>
-            </li>
+              <button type="button" class="btn" *ngIf="!logged">
+                <a
+                  class="btn-primary"
+                  routerLink="/login"
+                  routerLinkActive="active"
+                >
+                  Donate Now <mat-icon>favorite</mat-icon>
+                </a>
+              </button>
+
+              <li class="profile nav-item dropdown1" *ngIf="logged">
+                <a class="dropbtn nav-link dropdown-toggle">
+                  <mat-icon> account_circle </mat-icon>
+                </a>
+                <div class="dropdown-content">
+                  <a class="dropdown-item" routerLink="/profile"
+                    >your profile</a
+                  >
+                  <button class="logOut btn btn-primary" (click)="logout()">
+                    <a>
+                      <span class="logout-icon">
+                        <mat-icon> logout </mat-icon>
+
+                        Logout
+                      </span>
+                    </a>
+                  </button>
+                </div>
+              </li>
+            </div>
           </div>
-        </div>
-
-      </nav>
+        </nav>
+      </div>
+      <div id="mainphoto" class="d-flex align-items-center"></div>
     </div>
-    <div id="mainphoto" class="d-flex align-items-center"></div>
-  </div>
-</body>
-
+  </body>
 </html>
