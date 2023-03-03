@@ -18,10 +18,15 @@ import { ProductPageComponent } from './components/product-page/product-page.com
 import { ProfileComponent } from './components/profile/profile.component';
 import { MyGuardGuard } from './my-guard.guard';
 import { ThanksComponent } from './components/thanks/thanks.component';
+import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
+import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 
 var Routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'forgetpassword', component: ForgetpasswordComponent },
+  // { path: 'auth/resetpassword', component: ResetpasswordComponent },
+  { path: 'auth/resetpassword/:id', component: ResetpasswordComponent },
   {
     path: 'signup',
     component: SignupComponent,
@@ -40,7 +45,7 @@ var Routes: Routes = [
   },
   { path: 'profile', component: ProfileComponent, canActivate: [MyGuardGuard] },
 
-  { path: 'thanks', component: ThanksComponent, canActivate: [MyGuardGuard]  },
+  { path: 'thanks', component: ThanksComponent, canActivate: [MyGuardGuard] },
   { path: '**', component: ErrorComponent },
 ];
 
