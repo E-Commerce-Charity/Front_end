@@ -11,7 +11,7 @@
   display: flex;
   justify-content: space-between;
   /* border: 1px solid rgba(153, 152, 152, 0.558); */
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0px 0px 22px #e7e6e662, -20px -20px 62px #ffffffd2;
   /* align-items: center; */
   border-radius: 20px;
 }
@@ -25,13 +25,14 @@
 }
 .photo {
   width: 50%;
-  background-image: url("../../../assets/signgirl.jpg");
-  /* background-color: #cccccc; */
+  background-image: url("../../../assets/images/side-view-homeless-man-stairs-with-cup-help-sign_23-2148760780.avif");
+  background-color: #cccccc;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   /* background-color: rgb(0, 255, 89); */
-  /* background-color: blueviolet; */
+  /* background-color: blueviolet;
+  */
   border-radius: 20px;
 }
 
@@ -87,4 +88,8 @@ form h6 {
   .photo {
     display: none;
   }
+}
+
+.form-floating.password-group .form-control:focus ~ label {
+  z-index: 33;
 }
