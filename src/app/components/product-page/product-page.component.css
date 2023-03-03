@@ -5,18 +5,18 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
 }
-.productPage{
+.productPage {
   /* position: relative;
   top: 30%; */
 
   margin: 16px 0;
 }
 
-div.main{
-    position: relative;
-    left: 15%;
-    padding: 8px;
-    width :80%;
+div.main {
+  position: relative;
+  left: 15%;
+  padding: 8px;
+  width: 80%;
 }
 
 .height {
@@ -52,11 +52,10 @@ div.main{
   width: 110px;
 }
 
-
 button.btn {
-    background-color: #009368;
-    color: white;
-    padding: 12px;
+  background-color: #009368;
+  color: white;
+  padding: 12px;
 }
 
 @media (max-width=768px) {
@@ -64,9 +63,17 @@ button.btn {
     width: 40%;
     display: flex;
     flex-direction: column;
-    
   }
-  #view-btn{
+  #view-btn {
     margin: 2rem;
   }
+}
+
+.ngx-pagination li {
+  color: var(--e-global-primary);
+}
+
+.ngx-pagination li.current {
+  color: #fff;
+  background-color: var(--e-global-secondary) !important;
 }

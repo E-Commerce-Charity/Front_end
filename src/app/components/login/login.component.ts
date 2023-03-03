@@ -25,6 +25,7 @@ export class LoginComponent {
   formValid: boolean | undefined;
   usertoken: any;
   emailRes: any;
+  isLogged: any;
 
   user: {
     email: string;
@@ -91,15 +92,6 @@ export class LoginComponent {
     }
   }
 
-  // login(username: string, password: string): void {
-  //   this.authService.login(username, password).subscribe((response) => {
-  //     if (response && response.token) {
-  //       this.authService.setAuthToken(response.token);
-  //       // Redirect the user to the protected route
-  //     }
-  //   });
-  // }
-
   onSubmit() {
     this.authService.login(this.loginForm.value).subscribe(
       (response) => {
@@ -122,9 +114,13 @@ export class LoginComponent {
         this.router.navigateByUrl('/', { replaceUrl: true });
         if (response && response.token) {
           this.authService.setAuthToken(response.token);
+          this.isLogged = true;
           // Redirect the user to the protected route
           this.authService.setNavigationUrls(response.user.role);
+        } else {
+          this.isLogged = false;
         }
+        localStorage.setItem('logged', this.isLogged);
       },
       (error) => {
         // If the login fails, display an error message

@@ -53,3 +53,178 @@ header:before {
   background-color: orange;
   margin-left: 0.2rem;
 }
+
+.sponsors {
+  padding: 20px 0px;
+  background-image: url("https://harity.templatekit.co/wp-content/uploads/sites/49/2022/06/bg-brands.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background: var(--e-global-color-749a04a); */
+}
+
+.sponsors h2 {
+  text-align: center;
+}
+
+.sponsors h2::after {
+  width: 180px;
+  margin: auto;
+}
+
+.sponsors .carousel-inner {
+  gap: 60px;
+  padding: 20px 0px;
+}
+
+.sponsors .carousel-item {
+  position: relative;
+  display: flex;
+  float: none;
+  width: 105px;
+  height: 105x;
+  margin-right: 0px;
+  backface-visibility: hidden;
+  transform: none;
+  perspective-origin: 1000;
+  transform: scaleZ(1.2);
+  box-shadow: 0.1px 0.1px 2px var(--gray);
+  transition: all 0.6s ease-in-out;
+  border-radius: 10px;
+  opacity: 0.5;
+}
+
+.sponsors .carousel-item.active {
+  opacity: 1;
+}
+
+.sponsors .carousel-item img {
+  max-width: 100%;
+}
+
+.sponsors .carousel-item.active img {
+  box-shadow: 0.5px 0.5px 10px var(--bit-lightgrey);
+}
+
+.copy-right {
+  background: var(--e-global-color-secondary);
+  padding: 20px 0px;
+  color: var(--e-global-color-c90c6a5);
+  font-size: 1.1rem;
+  width: 100%;
+}
+
+.copy-right .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+}
+
+.copy-right .container div:last-of-type {
+  text-align: right;
+}
+
+.page-section.ourevents {
+  margin-bottom: 50px;
+}
+.page-section.ourevents .card-body {
+  background-color: var(--e-global-color-c90c6a5);
+  border-radius: 10px;
+  box-shadow: 0px 0px 50px #fdfbfb62, 0px 0px 50px #f0f0f0d2;
+  padding: 60px 40px;
+  position: relative;
+  top: 80px;
+  left: 25px;
+  z-index: 5;
+}
+
+.page-section.ourevents .card-body .details h2 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: var(--e-global-color-secondary);
+}
+
+.page-section.ourevents .card-body .details p {
+  font-size: 2.5rem;
+  font-weight: 600;
+  max-width: 650px;
+  color: var(--e-global-color-primary);
+}
+
+.page-section.ourevents .card-body .details p::after {
+  content: "";
+  width: 100px;
+  height: 3px;
+  background-color: var(--e-global-color-accent);
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+div.person {
+  display: flex;
+  justify-content: start;
+  gap: 10px;
+}
+
+div.image {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+div.image img {
+  max-width: 100%;
+  border-radius: 50%;
+}
+
+div.user-detail p.name {
+  color: var(--e-global-color-primary);
+  font-size: 1.1rem;
+  margin: 5px 0px;
+  font-weight: 600;
+}
+
+div.user-detail p.designation {
+  color: var(--e-global-color-secondary);
+  font-size: 0.7rem;
+  font-weight: 500;
+
+  margin: 0px;
+}
+
+.page-section.ourevents .carousel-indicators {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin-right: 15%;
+  margin-bottom: -3rem !important;
+  margin-left: 15%;
+  list-style: none;
+}
+
+.carousel-dark .carousel-indicators [data-bs-target] {
+  background-color: var(--e-global-color-accent);
+}
+
+.right_iamge {
+  position: relative;
+}
+
+.right_iamge img {
+  width: 600px;
+  height: 500px;
+}
+.heart {
+  position: absolute;
+  right: -10px;
+  top: 0;
+  z-index: 1;
+  width: 120px;
+  height: 120px;
+}
