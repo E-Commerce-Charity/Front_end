@@ -27,6 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { ProductPageComponent } from './components/product-page/product-page.component';
+
 import {
   MatError,
   MatFormFieldControl,
@@ -92,6 +93,8 @@ import { ResetpasswordComponent } from './components/resetpassword/resetpassword
     HttpClientModule,
     NgxPaginationModule,
     RouterModule.forRoot([]),
+
+
   ],
   exports: [AboutHeaderComponent, CardComponent],
 

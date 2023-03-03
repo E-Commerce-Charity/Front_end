@@ -4,9 +4,9 @@ header {
   font-family: Poppins;
   position: relative;
   /* background-color: black; */
-  background: url("../../../assets/header.jpg") no-repeat;
+  background: url("../../../assets/header2.jpg");
   background-size: cover;
-  padding-top: 13rem;
+  padding-top: 4rem;
   padding-bottom: 4rem;
 }
 header:before {
