@@ -13,15 +13,11 @@ export class ResetpasswordComponent implements OnInit {
   constructor(
     private service: PasswordService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
-    this.activatedRoute.queryParams.subscribe((params) => {
-      // let resetToken = params['resettoken'];
-
-      console.log(params); // OUTPUT 123
-    });
+    this.route.queryParams.subscribe((params) => {});
   }
 
   resetPassword(password: any) {

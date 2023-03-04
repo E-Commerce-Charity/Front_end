@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/Services/product.service';
 import { CartService } from '../../Services/cart.service';
@@ -15,30 +16,23 @@ export class CartComponent implements OnInit {
   constructor(
     private service: CartService,
     private productService: ProductService,
-    private orderService: OrderService
+    private orderService: OrderService,
+    private router: Router
   ) {}
 
-  // cartProducts: any[] = [
-  //   { title: 'product1', price: 150, quantity: 5 },
-  //   { title: 'product2', price: 200, quantity: 1 },
-  //   { title: 'product3', price: 100, quantity: 3 },
-  //   { title: 'product4', price: 100, quantity: 3 },
-  //   { title: 'product5', price: 100, quantity: 3 },
-  //   { title: 'product6', price: 100, quantity: 3 },
-  // ];
   cartProducts: {
     product: String;
     quantity: Number;
     price: Number;
     title: String;
-  }[] = []; ////////////
-  // productId: any = '63e9ef19bb8ac8b5d36bce33';
+  }[] = [];
+
   total: any;
   totalQuantity: number = 0;
   itemsNumber: any;
   ngOnInit(): void {
     this.getAllProducts();
-    this.getCartProducts(); /////////////////
+    this.getCartProducts();
     this.getCartTotal();
     this.getTotalQuantity();
   }
@@ -139,8 +133,13 @@ export class CartComponent implements OnInit {
   orderMeals() {
     return this.orderService.createOrder(this.cartId).subscribe((res: any) => {
       console.log(res);
+      // this.router.navigateByUrl('/cart', { skipLocationChange: true });
     });
   }
 
-  orderMoney() {}
+  orderCash() {
+    return this.orderService
+      .createCashOrder(this.cartId)
+      .subscribe((res: any) => {});
+  }
 }
