@@ -12,8 +12,8 @@ export class ProductPageComponent implements OnInit {
   cards: any;
   page: number = 1;
   count: number = 0;
-  tableSize: number = 6;
-  tableSizes: any = [3, 6, 9, 12];
+  tableSize: number = 15;
+  tableSizes: any = [3, 6, 9, 12, 15, 18];
 
   title: string = 'Product';
   numberOfPages: any;
@@ -34,12 +34,12 @@ export class ProductPageComponent implements OnInit {
   limit: any;
   totalNumber: any;
   SoldCard: any;
-
-  getPage(index: Number) {
-    return this.productService.getPage(index).subscribe((res: any) => {
-      this.cards = res.data;
-    });
-  }
+  category: any;
+  // getPage(index: Number) {
+  //   return this.productService.getPage(index).subscribe((res: any) => {
+  //     this.cards = res.data;
+  //   });
+  // }
 
   getAllProducts() {
     return this.productService
@@ -57,6 +57,24 @@ export class ProductPageComponent implements OnInit {
     this.tableSize = event.target.value;
     this.page = 1;
     this.getAllProducts();
+  }
+
+  onSelected(value: any) {
+    console.log(value);
+    this.category = value;
+    if (this.category !== 'null') {
+      return this.productService
+        .getProductByCategory(this.totalNumber, this.category)
+        .subscribe((res: any) => {
+          this.cards = res.data;
+        });
+    } else {
+      return this.productService
+        .getAllProducts(this.totalNumber)
+        .subscribe((res: any) => {
+          this.cards = res.data;
+        });
+    }
   }
 }
 

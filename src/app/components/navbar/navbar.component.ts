@@ -20,14 +20,11 @@ export class NavbarComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     this.getCart();
-    // this.logged = localStorage.getItem('isLogged');
 
     this.logged = this.authService.isLoggedIn();
-    console.log(this.logged);
   }
   getCart() {
     this.service.getCart().subscribe((res) => {
-      console.log('from nav bar', res);
       this.data = res;
       this.numOfCartItems = this.data.numOfCartItems;
     });
