@@ -34,7 +34,9 @@ export class userService {
   }
 
   getUserById(id: any) {
-    return this.http.get(`${this.baseUrl}${id}`);
+    return this.http.get(`${this.baseUrl}${id}`, {
+      headers: this.headers,
+    });
   }
 
   updateUser(id: any, editUser: any) {

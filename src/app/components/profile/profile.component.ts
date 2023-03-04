@@ -21,11 +21,12 @@ export class ProfileComponent implements OnInit {
   ordersPhoto: any;
   dataOrder: any;
   constructor(route: ActivatedRoute, private myService: userService) {
+    this.id = localStorage.getItem('id');
     // this.id = route.snapshot.params['id'];
     // this.id = '63ff3bd58146188ca3df5253';
   }
   ngOnInit(): void {
-    this.myService.getUserById('63e94d49b249727a47113fe3').subscribe({
+    this.myService.getUserById(this.id).subscribe({
       next: (res) => {
         this.user = res;
         this.userId = this.user.data.user;
@@ -75,7 +76,7 @@ export class ProfileComponent implements OnInit {
       email: this.email,
       password: this.password,
     };
-    this.myService.updateUser(data1, '63e94d49b249727a47113fe3').subscribe({
+    this.myService.updateUser(data1, this.id).subscribe({
       next: (res) => {
         console.log(res);
       },
