@@ -36,6 +36,19 @@ export class ProductService {
     });
   }
 
+  getProductByCategoryAndPrice(total: any, category: any, price: any) {
+    return this.http.get('http://localhost:3000/products/', {
+      // params: this.params,
+      params: new HttpParams()
+        .set('page', '1')
+        .set('limit', total)
+        .set('category', category)
+        .set('price', price),
+
+      // params: new HttpParams().set('page', '1').set('limit', '6'),
+    });
+  }
+
   getProductByCategory(total: any, category: any) {
     return this.http.get('http://localhost:3000/products/', {
       // params: this.params,
@@ -43,6 +56,16 @@ export class ProductService {
         .set('page', '1')
         .set('limit', total)
         .set('category', category),
+    });
+  }
+
+  getProductByPrice(total: any, price: any) {
+    return this.http.get('http://localhost:3000/products/', {
+      // params: this.params,
+      params: new HttpParams()
+        .set('page', '1')
+        .set('limit', total)
+        .set('price', price),
 
       // params: new HttpParams().set('page', '1').set('limit', '6'),
     });

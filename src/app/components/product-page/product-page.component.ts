@@ -14,7 +14,7 @@ export class ProductPageComponent implements OnInit {
   count: number = 0;
   tableSize: number = 15;
   tableSizes: any = [3, 6, 9, 12, 15, 18];
-
+  data: any;
   title: string = 'Product';
   numberOfPages: any;
   noOfPages: Number[] = [];
@@ -34,7 +34,8 @@ export class ProductPageComponent implements OnInit {
   limit: any;
   totalNumber: any;
   SoldCard: any;
-  category: any;
+  category: any = 'null';
+  myPrice: any = 'null';
   // getPage(index: Number) {
   //   return this.productService.getPage(index).subscribe((res: any) => {
   //     this.cards = res.data;
@@ -59,28 +60,104 @@ export class ProductPageComponent implements OnInit {
     this.getAllProducts();
   }
 
+  // onSelected(value: any) {
+  //   console.log(value);
+  //   this.category = value;
+  //   if (this.category !== null && this.myPrice !== null) {
+  //     console.log('both');
+  //     return this.productService
+  //       .getProductByCategoryAndPrice(
+  //         this.totalNumber,
+  //         this.category,
+  //         this.myPrice
+  //       )
+  //       .subscribe((res: any) => {
+  //         this.cards = res.data;
+  //       });
+  //   } else if (this.category !== 'null' && this.myPrice == null) {
+  //     console.log('By category');
+  //     return this.productService
+  //       .getProductByCategory(this.totalNumber, this.category)
+  //       .subscribe((res) => {
+  //         console.log(res);
+  //       });
+  //   } else {
+  //     console.log('All');
+  //     return this.productService
+  //       .getAllProducts(this.totalNumber)
+  //       .subscribe((res: any) => {
+  //         this.cards = res.data;
+  //       });
+  //   }
+  // }
+
   onSelected(value: any) {
     console.log(value);
     this.category = value;
-    if (this.category !== 'null') {
+    console.log('category: ', this.category);
+    console.log('price: ', this.myPrice);
+    if (this.category == 'null' && this.myPrice == 'null') {
+      console.log('All');
+      return this.productService
+        .getAllProducts(this.totalNumber)
+        .subscribe((res: any) => {
+          this.cards = res.data;
+        });
+    } else if (this.category == 'null' && this.myPrice !== 'null') {
+      console.log('By Price');
+      return this.productService
+        .getProductByPrice(this.totalNumber, this.myPrice)
+        .subscribe((res) => {
+          console.log(res);
+          this.data = res;
+          this.cards = this.data.data;
+        });
+    } else if (this.category !== 'null' && this.myPrice !== 'null') {
+      console.log('By category and Price');
+      return this.productService
+        .getProductByCategoryAndPrice(
+          this.totalNumber,
+          this.category,
+          this.myPrice
+        )
+        .subscribe((res) => {
+          console.log(res);
+          this.data = res;
+          this.cards = this.data.data;
+        });
+    } else if (this.myPrice === 'null') {
+      console.log('by category');
       return this.productService
         .getProductByCategory(this.totalNumber, this.category)
         .subscribe((res: any) => {
           this.cards = res.data;
         });
     } else {
+      return;
+    }
+  }
+
+  priceChange(price: any) {
+    this.myPrice = price;
+    console.log(this.myPrice);
+    console.log(this.category);
+    if (this.category == 'null') {
+      console.log('cat null');
       return this.productService
-        .getAllProducts(this.totalNumber)
+        .getProductByPrice(this.totalNumber, this.myPrice)
+        .subscribe((res: any) => {
+          this.cards = res.data;
+        });
+    } else {
+      return this.productService
+        .getProductByCategoryAndPrice(
+          this.totalNumber,
+          this.category,
+          this.myPrice
+        )
         .subscribe((res: any) => {
           this.cards = res.data;
         });
     }
   }
-}
-
-interface card {
-  id: number;
-  title: string;
-  desc: string;
-  addToCart: boolean;
 }
