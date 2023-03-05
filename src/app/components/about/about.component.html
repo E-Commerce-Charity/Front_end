@@ -4,32 +4,36 @@
 <header>
   <div class="container position-relative header-text">
     <div class="row ">
-      <div class="container ms-lg-5 ">
+      <div class="container ms-lg-5 heading-context ">
         <div class="row text-light fw-bold">
           <h1>About</h1>
         </div>
         <div class="row line"></div>
-        <div class="d-flex flex-row">
-          <p class="text-warning p-2">Home</p>
-          <p class="text-warning  p-2">>></p>
-          <p class="text-light p-2 fw-semibold fs-6">About</p>
-        </div>
+        <ol aria-label="breadcrumb" class="d-flex flex-row breadcrumb">
+          <li class="text-warning p-2 breadcrumb-item">
+            <a routerLink="/">Home</a>
+          </li>
+          <li class="text-warning  p-2">>></li>
+          <li class="text-light p-2 fw-semibold fs-6 breadcrumb-item active">
+            About
+          </li>
+        </ol>
       </div>
     </div>
   </div>
 </header>
 
 <section class="page-section main-about mb-5 mt-5 " id="team">
-  <div class=" container mb-3 mb-5 ">
-    <div class="row g-0 ms-5">
-      <div class="col-md-4">
+  <div class="container mb-3 mb-5 ">
+    <div class="row g-0 m-auto ms-xl-5 ">
+      <div class="col-12 m-lg-auto col-lg-10 col-xl-4 img">
         <img src="../../assets/images/page1.jpg" class="img-fluid rounded-5" alt="...">
       </div>
-      <div class="card col-md-7">
+      <div class="col-12 col-lg-10 m-lg-auto card col-xl-7">
         <div class="card-body">
           <h2 class="card-title  text-success fs-4">Welcome to Harity</h2>
           <h3 class="card-text fw-bold fs-1">Helping Today Helping Tommorow</h3>
-          <p class="card-text fs-5 mt-3 mb-3 ms-2 context">Malesuada nunc vel risus commodo viverra maecenas accumsan
+          <p class="card-text fs-5 mt-3 mb-3 context">Malesuada nunc vel risus commodo viverra maecenas accumsan
             lacus. Netus et malesuada fames ac turpis egestas integer eget aliquet. Semper feugiat nibh sed pulvinar
             proin gravida hendrerit. Dictum non consectetur erat nam at lectus.</p>
 
@@ -66,7 +70,7 @@
 <section class="page-section ourFeatures " id="services">
   <div class="container2 container mt-5 mb-5" id="serv1">
     <div class="row mt-5" style="width:100%;">
-      <div class="text-center mt-5">
+      <div class="text-center mt-3">
         <h2 class="" aria-current="page">
           Help is Our Goal</h2>
         <h3 class="">What Make Us Different</h3>
@@ -121,29 +125,33 @@
 
   <div class="container row m-auto">
 
-    <div class="statistics_item col-12 col-md-6 col-lg-3">
+    <div>
 
-      <h2><span class="statistics_num">20</span>M</h2>
-      <p>Number of Supporters</p>
+      <div class="statistics_item m-auto col-11 col-md-6 col-lg-3">
+
+        <h2><span class="statistics_num">20</span>M</h2>
+        <p>Number of Supporters</p>
+      </div>
+      <div class=" statistics_item m-auto col-11 col-md-6 col-lg-3">
+
+        <h2><span class="statistics_num">15</span>K+</h2>
+        <p>Volunteers Worldwide</p>
+      </div>
+      <div class=" statistics_item m-auto col-11 col-md-6 col-lg-3">
+
+        <h2><span class="statistics_num">98</span>%</h2>
+        <p>Completed Projects</p>
+      </div>
+
+      <div class="statistics_clickable m-auto col-12 col-md-6 col-lg-3">
+
+        <h2>Our Goal is to Help Poor People</h2>
+        <p><a href="#">Become a volunteer &#8594;
+          </a></p>
+
+      </div>
     </div>
-    <div class=" statistics_item  col-12 col-md-6 col-lg-3">
 
-      <h2><span class="statistics_num">15</span>K+</h2>
-      <p>Volunteers Worldwide</p>
-    </div>
-    <div class=" statistics_item col-12 col-md-6 col-lg-3">
-
-      <h2><span class="statistics_num">98</span>%</h2>
-      <p>Completed Projects</p>
-    </div>
-
-    <div class="statistics_clickable col-12 col-md-6 col-lg-3">
-
-      <h2>Our Goal is to Help Poor People</h2>
-      <p><a href="#">Become a volunteer &#8594;
-        </a></p>
-
-    </div>
   </div>
 
 </section>

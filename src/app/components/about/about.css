@@ -8,11 +8,16 @@
   margin-right: 20px;
 }
 
+.icon {
+  padding: 5px;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+
 .icon:hover {
   background-color: white;
-  /* height: 240px; */
-  border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 }
 
 /* .card-img-top:hover{
@@ -27,10 +32,16 @@ header {
   font-family: Poppins;
   position: relative;
   /* background-color: black; */
-  background: url("../../../assets/header.jpg") no-repeat;
+  background: linear-gradient(
+      0deg,
+      rgba(43, 69, 55, 0.7),
+      rgba(126, 158, 141, 0.7),
+      rgba(89, 101, 94, 0.7)
+    ),
+    url("../../../assets/header.jpg") no-repeat;
   background-size: cover;
   padding-top: 15rem;
-  padding-bottom: 6rem;
+  padding-bottom: 4rem;
   top: -100px;
 }
 header:before {
@@ -583,12 +594,15 @@ section.aboutus .content .aboutus__context .btn:hover,
 }
 
 section.statistics .container {
-  background-color: var(--e-global-color-c90c6a5);
+}
+
+section.statistics .container > div {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   position: relative;
   padding: 0px;
+  z-index: 5;
   top: -50px;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 }
 
 section.statistics .container .statistics_item,
@@ -643,4 +657,140 @@ section.statistics .container .statistics_clickable a {
 
 section.statistics .container .statistics_clickable a:hover {
   color: var(--e-global-color-accent);
+}
+
+.breadcrumb li {
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.breadcrumb a {
+  color: var(--e-global-color-accent);
+  text-decoration: none;
+  transition: all 0.3s linear;
+}
+
+.breadcrumb a:hover {
+  color: var(--e-global-color-2acdf8f);
+}
+.heading-context {
+  margin-top: 60px;
+}
+
+.main-about .img {
+  position: relative;
+}
+
+.main-about {
+  margin-top: 100px;
+}
+.main-about .img::before {
+  content: "";
+  position: absolute;
+  top: -110px;
+  left: -120px;
+  width: 380px;
+  height: 350px;
+  background-repeat: no-repeat;
+  background: url("https://harity.templatekit.co/wp-content/uploads/sites/49/2022/06/Element.png");
+  z-index: -1;
+}
+
+.main-about .img::after {
+  content: "2023";
+  position: absolute;
+  bottom: 30px;
+  left: 0px;
+  z-index: 3;
+  font-weight: 800;
+  color: var(--e-global-color-secondary);
+  font-size: 6rem;
+}
+.main-about .card-body {
+  margin-left: 60px;
+}
+
+.main-about .img::after {
+  bottom: -70px;
+  left: 0px;
+}
+
+@media (max-width: 767px) {
+  .main-about .img::before {
+    top: -100px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-repeat: none;
+  }
+
+  .main-about .img::after {
+    bottom: -40px;
+    left: 0px;
+  }
+
+  .main-about .card-body {
+    margin-left: 0px;
+  }
+  .main-icons > div {
+    flex-direction: column;
+  }
+  section.statistics {
+    background-color: #fff;
+  }
+  section.statistics .container .statistics_clickable {
+    border-radius: 0px 0px 4px 4px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .main-about .img::before {
+    top: -120px;
+    left: -80px;
+    width: 380px;
+    height: 350px;
+    background-repeat: none;
+  }
+
+  .main-about .img::after {
+    bottom: -40px;
+    left: 0px;
+  }
+
+  .main-about .card-body {
+    margin-left: 0px;
+  }
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+  .main-about .img::before {
+    top: -120px;
+    left: -80px;
+    width: 380px;
+    height: 350px;
+    background-repeat: none;
+  }
+
+  .main-about .img::after {
+    bottom: -40px;
+    left: 0px;
+  }
+
+  .main-about .card-body {
+    margin-left: 0px;
+  }
+
+  .main-about .card-body h3 {
+    max-width: 800px;
+  }
+}
+
+.main-icons > div > div p {
+  margin-top: -2px;
+}
+
+mat-icon {
+  position: relative;
+  top: 5px;
 }

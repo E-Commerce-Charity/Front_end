@@ -266,3 +266,19 @@ a:hover .cart-icon {
 .active {
   color: #cb9712;
 }
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-top: 15px;
+}
+
+.logo img {
+  max-width: 60px;
+}
+
+.logo a {
+  color: var(--e-global-color-749a04a);
+
+  text-decoration: none;
+}
