@@ -31,8 +31,8 @@ export class CartComponent implements OnInit {
   totalQuantity: number = 0;
   itemsNumber: any;
   ngOnInit(): void {
-    this.getAllProducts();
     this.getCartProducts();
+    this.getAllProducts();
     this.getCartTotal();
     this.getTotalQuantity();
   }

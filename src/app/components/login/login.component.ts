@@ -52,6 +52,7 @@ export class LoginComponent {
   ngOnInit(): void {
     this.myService.getAllUsers().subscribe(
       (response) => {
+        console.log(response);
         this.users = response;
         this.users = this.users.data.users;
       },

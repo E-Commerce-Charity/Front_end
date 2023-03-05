@@ -20,7 +20,7 @@ import { MyGuardGuard } from './my-guard.guard';
 import { ThanksComponent } from './components/thanks/thanks.component';
 import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
-
+import { ThanksDonationComponent } from './components/thanks-donation/thanks-donation.component';
 var Routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
@@ -45,7 +45,11 @@ var Routes: Routes = [
   },
   { path: 'profile', component: ProfileComponent, canActivate: [MyGuardGuard] },
 
-  { path: 'thanks', component: ThanksComponent, canActivate: [MyGuardGuard] },
+  {
+    path: 'thanks',
+    component: ThanksDonationComponent,
+    canActivate: [MyGuardGuard],
+  },
   { path: '**', component: ErrorComponent },
 ];
 

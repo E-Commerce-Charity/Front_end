@@ -5,9 +5,6 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class userService {
-  // auth_token =
-  //   // 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ZmM2JkNTgxNDYxODhjYTNkZjUyNTMiLCJpYXQiOjE2Nzc3OTYzMDB9.06lkv7YCaAqemCuBxqUDiMotGe9sJM4HK5Suy_sPthQ';
-  //   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2U5NGQ0OWIyNDk3MjdhNDcxMTNmZTMiLCJpYXQiOjE2Nzc4MDU1MTJ9.KU00UhEQCNmpLoIzGiGH-pR1E-d3CwBKd6980V5IfVQ';
   auth_token: any = localStorage.getItem('token');
   // id: any = localStorage.getItem('id');
   headers = new HttpHeaders({
