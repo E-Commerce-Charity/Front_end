@@ -27,6 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { ProductPageComponent } from './components/product-page/product-page.component';
+
 import {
   MatError,
   MatFormFieldControl,
@@ -39,6 +40,9 @@ import { AboutHeaderComponent } from './components/about/about-header/about-head
 import { YsectionComponent } from './components/ysection/ysection.component';
 import { ThanksComponent } from './components/thanks/thanks.component';
 import { HomeCardComponent } from './components/home-card/home-card.component';
+import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
+import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
+import { ThanksDonationComponent } from './components/thanks-donation/thanks-donation.component';
 
 // import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -69,6 +73,9 @@ import { HomeCardComponent } from './components/home-card/home-card.component';
     AboutComponent,
     ThanksComponent,
     HomeCardComponent,
+    ForgetpasswordComponent,
+    ResetpasswordComponent,
+    ThanksDonationComponent,
   ],
   imports: [
     BrowserModule,
@@ -87,6 +94,9 @@ import { HomeCardComponent } from './components/home-card/home-card.component';
     AppRoutingModule,
     HttpClientModule,
     NgxPaginationModule,
+    RouterModule.forRoot([]),
+
+
   ],
   exports: [AboutHeaderComponent, CardComponent],
 

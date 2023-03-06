@@ -1,75 +1,3 @@
-// import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-// import { Injectable } from '@angular/core';
-
-// @Injectable({
-//   providedIn: 'root',
-// })
-// export class ProductService {
-//   auth_token =
-//     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2U5ZTg4ZGFkZmFmMzMxODE0YTYyZDIiLCJpYXQiOjE2Nzc3MDg2NDR9.ovHFccE39xeYB4sdj15SmVrisU2-NhcIaZBJNSMb_O4';
-//   headers = new HttpHeaders({
-//     'Content-Type': 'application/json',
-//     Authorization: `Bearer ${this.auth_token}`,
-//   });
-
-//   constructor(private http: HttpClient) {}
-//   params = new HttpParams().set('page', '1').set('limit', '6');
-
-//   getProduct() {
-//     return this.http.get('http://localhost:3000/products/', {
-//       // params: this.params,
-//       params: new HttpParams().set('page', '1').set('limit', '6'),
-//     });
-//   }
-
-//   getPage(index: Number) {
-//     return this.http.get('http://localhost:3000/products/', {
-//       // params: this.params,
-//       params: new HttpParams().set('page', +index).set('limit', '6'),
-//     });
-//   }
-
-//   getAllProducts(total: any) {
-//     return this.http.get('http://localhost:3000/products/', {
-//       // params: this.params,
-//       params: new HttpParams().set('page', '1').set('limit', total),
-//       // params: new HttpParams().set('page', '1').set('limit', '6'),
-//     });
-//   }
-
-//   updateProduct(id: any, sold: any) {
-//     return this.http.put(
-//       `http://localhost:3000/products/${id}`,
-//       {
-//         sold: sold + 1,
-//       },
-//       {
-//         headers: this.headers,
-//       }
-//     );
-//   }
-
-//   getProductById(id: any, sold: any) {
-//     return this.http.put(
-//       `http://localhost:3000/products/${id}`,
-//       {
-//         sold: sold + 1,
-//       },
-//       {
-//         headers: this.headers,
-//       }
-//     );
-//   }
-// }
-
-// /*
-// let params = new URLSearchParams();
-//     params.set('logNamespace', logNamespace);
-
-//     this._Http.get(`${API_URL}/api/v1/data/logs`, { search: params })
-// }
-// */
-
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -77,8 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ProductService {
-  auth_token =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2U5NGQ0OWIyNDk3MjdhNDcxMTNmZTMiLCJpYXQiOjE2Nzc3OTg5NzB9.nXV59XiPNLngidCjgcPAOQsRrXadhsrV_veLDml6xoI';
+  auth_token = localStorage.getItem('token');
   headers = new HttpHeaders({
     'Content-Type': 'application/json',
     Authorization: `Bearer ${this.auth_token}`,
@@ -87,19 +14,19 @@ export class ProductService {
   constructor(private http: HttpClient) {}
   params = new HttpParams().set('page', '1').set('limit', '6');
 
-  getProduct() {
-    return this.http.get('http://localhost:3000/products/', {
-      // params: this.params,
-      params: new HttpParams().set('page', '1').set('limit', '6'),
-    });
-  }
+  // getProduct() {
+  //   return this.http.get('http://localhost:3000/products/', {
+  //     // params: this.params,
+  //     params: new HttpParams().set('page', '1').set('limit', '6'),
+  //   });
+  // }
 
-  getPage(index: Number) {
-    return this.http.get('http://localhost:3000/products/', {
-      // params: this.params,
-      params: new HttpParams().set('page', +index).set('limit', '6'),
-    });
-  }
+  // getPage(index: Number) {
+  //   return this.http.get('http://localhost:3000/products/', {
+  //     // params: this.params,
+  //     params: new HttpParams().set('page', +index).set('limit', '6'),
+  //   });
+  // }
 
   getAllProducts(total: any) {
     return this.http.get('http://localhost:3000/products/', {
@@ -109,6 +36,40 @@ export class ProductService {
     });
   }
 
+  getProductByCategoryAndPrice(total: any, category: any, price: any) {
+    return this.http.get('http://localhost:3000/products/', {
+      // params: this.params,
+      params: new HttpParams()
+        .set('page', '1')
+        .set('limit', total)
+        .set('category', category)
+        .set('price', price),
+
+      // params: new HttpParams().set('page', '1').set('limit', '6'),
+    });
+  }
+
+  getProductByCategory(total: any, category: any) {
+    return this.http.get('http://localhost:3000/products/', {
+      // params: this.params,
+      params: new HttpParams()
+        .set('page', '1')
+        .set('limit', total)
+        .set('category', category),
+    });
+  }
+
+  getProductByPrice(total: any, price: any) {
+    return this.http.get('http://localhost:3000/products/', {
+      // params: this.params,
+      params: new HttpParams()
+        .set('page', '1')
+        .set('limit', total)
+        .set('price', price),
+
+      // params: new HttpParams().set('page', '1').set('limit', '6'),
+    });
+  }
   updateSold(id: any, sold: any) {
     return this.http.put(
       `http://localhost:3000/products/${id}`,
@@ -127,11 +88,3 @@ export class ProductService {
     });
   }
 }
-
-/*
-let params = new URLSearchParams();
-    params.set('logNamespace', logNamespace);
-
-    this._Http.get(`${API_URL}/api/v1/data/logs`, { search: params })
-}
-*/
