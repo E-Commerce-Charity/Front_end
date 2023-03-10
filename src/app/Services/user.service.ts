@@ -12,7 +12,7 @@ export class userService {
     Authorization: `Bearer ${this.auth_token}`,
   });
 
-  params = new HttpParams().set('page', '1').set('limit', '30');
+  params = new HttpParams().set('page', '1').set('limit', '59');
   options = { params: this.params, headers: this.headers };
 
   users: any;
