@@ -1,0 +1,50 @@
+  /*error page*/
+                        
+
+  section.error 
+  {
+    margin-top:50px;
+  }
+
+.error img {
+    max-height: 400px;
+    margin-top: 80px
+}
+
+.error h1 {
+    font-weight: 700;
+    color: var(--e-global-color-secondary);
+    font-size: 60px;
+}
+
+.error p {
+    color: var(--e-global-color-primary);
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.error button {
+    border-radius: 5px;
+    padding: 10px;
+    margin: 15px 0px;
+    border:none;
+    outline: none;
+    background-color: var(--e-global-color-secondary);
+}
+
+.error button a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.errornav{
+    background: var(--e-global-color-primary)!important;
+    height:80px;
+}
+
+nav 
+{
+    position: absolute;
+    top:0;
+    left:0
+}

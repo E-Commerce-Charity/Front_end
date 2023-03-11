@@ -1,12 +1,16 @@
-* {
-  margin: 0;
-  padding: 0;
+body 
+{
+  min-height:840px;
+  /* background: url("https://harity.templatekit.co/wp-content/uploads/sites/49/2022/06/bg_goal.jpg") center/cover no-repeat; */
+  position: relative
+  ;
+  z-index: 1;
 }
-
 .contain-Signup {
-  margin-top: 20px;
+  position: relative;
+  z-index:2;
+  margin-top: 40px;
   margin-bottom: 20px;
-  width: 80%;
   /* background-color: aqua; */
   display: flex;
   justify-content: space-between;
@@ -15,6 +19,17 @@
   /* align-items: center; */
   border-radius: 20px;
 }
+/* 
+.container::after 
+{
+  content:"";
+  display:block;
+  background: url("../../../assets/6325240.png");
+  width:200px;
+  left:-0px;
+  position: relative;
+  bottom: 200px;
+} */
 .Signup {
   width: 50%;
   /* background-color: blueviolet; */
@@ -25,14 +40,19 @@
 }
 .photo {
   width: 50%;
-  background-image: url("../../../assets/images/side-view-homeless-man-stairs-with-cup-help-sign_23-2148760780.avif");
-  background-color: #cccccc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  /* background-image: url("../../../assets/images/side-view-homeless-man-stairs-with-cup-help-sign_23-2148760780.avif"); */
+  /* background: url("../../../assets/Signup.svg");
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  background-size: contain;
+  background-position: center; */
   /* background-color: rgb(0, 255, 89); */
   /* background-color: blueviolet;
   */
+  
   border-radius: 20px;
 }
 
@@ -80,6 +100,7 @@ form h6 {
   margin-right: 50px;
 }
 
+
 @media screen and (max-width: 1000px) {
   .Signup {
     width: 100%;
@@ -89,7 +110,195 @@ form h6 {
     display: none;
   }
 }
-
+@media(max-width:767px)
+{
+  .Signup 
+  {
+    padding:20px;
+  }
+}
 .form-floating.password-group .form-control:focus ~ label {
   z-index: 33;
+}
+label 
+{
+  z-index: 444;
+}
+ul 
+{
+  padding:0!important;
+  padding-top:5px;
+  list-style: disc;
+  list-style-position: inside;
+}
+
+input[type="password"]
+{
+  border-right: 0px;
+}
+
+button.eye 
+{
+  border:1px solid #ced4da;
+  border-left:0px;
+  border-radius: 5px;;
+}
+
+svg#freepik_stories-sign-up:not(.animated) .animable {
+  opacity: 0;
+}
+
+svg#freepik_stories-sign-up.animated #freepik--background-simple--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) fadeIn;
+  animation-delay: 0s;
+}
+
+svg#freepik_stories-sign-up.animated #freepik--Checklists--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) slideRight;
+  animation-delay: 0s;
+}
+
+svg#freepik_stories-sign-up.animated #freepik--Envelopes--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) zoomOut;
+  animation-delay: 0s;
+}
+
+svg#freepik_stories-sign-up.animated #freepik--Floor--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) slideRight;
+  animation-delay: 0s;
+}
+
+svg#freepik_stories-sign-up.animated #freepik--Plants--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) zoomOut;
+  animation-delay: 0s;
+}
+
+svg#freepik_stories-sign-up.animated #freepik--Screen--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) zoomIn;
+  animation-delay: 0s;
+}
+
+svg#freepik_stories-sign-up.animated #freepik--Bricks--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) lightSpeedLeft;
+  animation-delay: 0s;
+}
+
+svg#freepik_stories-sign-up.animated #freepik--Information--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) fadeIn;
+  animation-delay: 0s;
+}
+
+svg#freepik_stories-sign-up.animated #freepik--Mail--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) lightSpeedRight;
+  animation-delay: 0s;
+}
+
+svg#freepik_stories-sign-up.animated #freepik--Character--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) slideRight;
+  animation-delay: 0s;
+}
+
+svg#freepik_stories-sign-up.animated #freepik--speech-bubble--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) slideUp;
+  animation-delay: 0s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes lightSpeedLeft {
+  from {
+    transform: translate3d(-50%, 0, 0) skewX(20deg);
+    opacity: 0;
+  }
+
+  60% {
+    transform: skewX(-10deg);
+    opacity: 1;
+  }
+
+  80% {
+    transform: skewX(2deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes lightSpeedRight {
+  from {
+    transform: translate3d(50%, 0, 0) skewX(-20deg);
+    opacity: 0;
+  }
+
+  60% {
+    transform: skewX(10deg);
+    opacity: 1;
+  }
+
+  80% {
+    transform: skewX(-2deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: inherit;
+  }
 }
