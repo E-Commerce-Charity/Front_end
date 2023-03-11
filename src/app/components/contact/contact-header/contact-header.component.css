@@ -1,35 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
+
 header {
   font-family: Poppins;
   position: relative;
-  /* background-color: black; */
-  background: url("../../../../assets/images/viewpoints-the-benefits-of-philanthropy-for-high-net-worth-investors-cover-1040x425.jpg")
-    no-repeat;
-  background-size: cover;
-  padding-top: 13rem;
-  padding-bottom: 5rem;
+  background: linear-gradient(0deg, rgba(43, 69, 55, .7), rgba(126, 158, 141, .7), rgba(89, 101, 94, .7)) 0 0/cover,  url("../../../../assets/images/viewpoints-the-benefits-of-philanthropy-for-high-net-worth-investors-cover-1040x425.jpg")
+  0% 0% /cover no-repeat;
+  padding-top: 20rem;
+  padding-bottom: 6rem;
+  top: -100px
 }
-.head {
-  margin-left: 20px;
-}
+
 header:before {
   content: "";
   position: absolute;
-  background-color: #000000;
+  background-color: #000;
   height: 100%;
   width: 100%;
   top: 0;
   left: 0;
-  opacity: 0.5;
+  opacity: .5
 }
-/* .header-text{
-  font-family: ;
-} */
 
 .line {
   width: 5rem;
-  padding: 0.1rem;
-  background-color: #eca30c;
-  margin-left: 0.2rem;
+  padding: .1rem;
+  background-color: orange;
+  margin-left: .2rem
 }

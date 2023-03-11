@@ -9,16 +9,16 @@
   </head>
   <body>
   <div class="header">
-    <div class="container">
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <h1 class="logo">
+    <div class="main-nav container-fluid container-md">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary  navbar-fixed-top navbar card-bordered sticky-top        " id="nav">
+        <div class="container-fluid p-0">
+          <h1 class="logo ps-2">
             <a routerLink="/">
-              <img src="../../../assets/main_logo.png" class="logo_img" alt="" loading="lazy" />
+              <img src="assets/main_logo.png" class="logo_img" alt="" loading="lazy" />
               <span>Hyatk</span>
             </a>
           </h1>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          <button class="navbar-toggler me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -81,7 +81,8 @@
                     </span>
                   </a>
                 </li>
-              </ul>
+
+            <li class="main-user">
 
               <button type="button" class="btn" *ngIf="!logged">
                 <a
@@ -93,7 +94,8 @@
                 </a>
               </button>
 
-              <li class="profile nav-item dropdown1" *ngIf="logged">
+
+              <div class="profile nav-item dropdown1" *ngIf="logged">
                 <a class="dropbtn nav-link dropdown-toggle">
                   <mat-icon> account_circle </mat-icon>
                 </a>
@@ -111,7 +113,43 @@
                     </a>
                   </button>
                 </div>
+              </div>
+
               </li>
+              </ul>
+
+              <div class="donation">
+              <button type="button" class="btn" *ngIf="!logged">
+                <a
+                  class="btn-primary"
+                  routerLink="/login"
+                  routerLinkActive="active"
+                >
+                  Donate Now <mat-icon>favorite</mat-icon>
+                </a>
+              </button>
+
+
+              <div class="profile nav-item dropdown1" *ngIf="logged">
+                <a class="dropbtn nav-link dropdown-toggle">
+                  <mat-icon> account_circle </mat-icon>
+                </a>
+                <div class="dropdown-content">
+                  <a class="dropdown-item" routerLink="/profile"
+                    >your profile</a
+                  >
+                  <button class="logOut btn btn-primary" (click)="logout()">
+                    <a>
+                      <span class="logout-icon">
+                        <mat-icon> logout </mat-icon>
+
+                        Logout
+                      </span>
+                    </a>
+                  </button>
+                </div>
+              </div>
+</div>
             </div>
           </div>
 

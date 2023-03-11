@@ -3,11 +3,11 @@
 <!-- Path: src\app\components\home\home.component.html -->
 
 <app-navbar></app-navbar>
-<header>
+<header id="header">
   <!-- <app-navbar></app-navbar> -->
   <div class="container row m-auto">
 
-    <div class="animate__animated animate__backInLeft header__context col-12 col-lg-6">
+    <div class="animate__animated animate__fadeInLeft header__context col-12 col-lg-6 animate__delay-1s animate__duration-3s">
       <h1>
         Lend a Helping Hand
       </h1>
@@ -19,7 +19,7 @@
         front line of hunger. Programs like school-based food pantries, emergency disaster relief.</p>
     </div>
 
-    <div class="animate__animated animate__backInRight header__payment-card col-12 col-lg-5 offset-lg-1 mt-5 mt-md-0 ">
+    <div class="animate__animated animate__fadeInRight header__payment-card col-12 col-lg-5 offset-lg-1 mt-5 mt-md-0  animate__delay-1s animate__duration-3s">
       <button class="btn btn-label">
         Education
       </button>
@@ -44,7 +44,7 @@
       <div class="payment-way">
         <button class="btn apple-pay payment-way__item ">
           <span class="material-icons">
-            credit_card
+            apple
           </span>
           <span class="payment_text">
             pay </span>
@@ -68,7 +68,7 @@
 
   <div class="container row m-auto">
 
-    <div class="row m-auto">
+    <div class="row m-auto animate__animated animate__fadeInUpBig animate__delay-2s">
 
       <div class="statistics_item m-auto col-12 col-md-6 col-lg-3">
 
@@ -106,7 +106,7 @@
     <div class="overlay">
     </div>
     <div class="content row m-auto">
-      <div class="aboutus__images col-12 col-lg-6">
+      <div class="aboutus__images col-12 col-lg-6 animate__animated animate__fadeInLeft animate__delay-4s">
         <div class="images">
           <div class="image_0">
             <img src="assets/images/home/iconsolidarity.png" alt="aboutus">
@@ -121,7 +121,7 @@
         </div>
       </div>
 
-      <div class="aboutus__context col-12 col-lg-6 mt-md-0 ">
+      <div class="aboutus__context col-12 col-lg-6 mt-md-0 animate__animated animate__fadeInRight animate__delay-4s">
 
         <h2>
           About Us
@@ -172,7 +172,7 @@
   <h3> You Can Help Lots of People by
     Donating Little
   </h3>
-  <div class="product-container row ">
+  <div class="product-container row animate__animated animate__fadeInUpBig animate__delay-6s">
     <!-- <div class="col-md-3"></div>
               <div class="col-md-3"></div> -->
     <ng-container>
@@ -289,12 +289,12 @@
 
 
 
-<section class="our-mission">
+<section class="our-mission animate__animated animate__fadeInLeft animate__delay-2s">
   <div class="icon">
     <img src="assets/images/home/iconplanet.png" alt="mission">
   </div>
   <div class="container row m-auto">
-    <div class="col-11 col-lg-6 our-mission__context">
+    <div class="col-12 col-lg-6 our-mission__context">
       <h2>
         Do Good Job
       </h2>
@@ -303,7 +303,7 @@
         the World
       </h3>
     </div>
-    <div class="col-11 col-lg-6 col-xl-5 offset-xl-1 our-mission__roles">
+    <div class="col-12 col-lg-6 col-xl-5 offset-xl-1 our-mission__roles">
       <div class="roles__btns">
         <button class="btn">
           <a href="#"> Become a Volunteer</a>
@@ -327,25 +327,25 @@
 
 <!--Sponsors section-->
 <section class="sponsors">
-  <div class="container-sm">
+  <div class="container-sm animate__animated animate__fadeInLeft animate__delay-2s">
     <div class="row d-flex justify-content-center wow animate__fadeInUp" data-wow-duration="1.5s">
       <div class="col-md-10">
         <div id="Oursponsor" class="carousel carousel-dark slide" data-bs-ride="carousel">
           <div class="carousel-inner row justify-content-center">
             <div class="carousel-item active " data-bs-interval="2000">
-              <img src="../../../assets/images/2_logo.png" alt="sponsor1">
+              <img src="assets/images/2_logo.png" alt="sponsor1">
             </div>
             <div class="carousel-item " data-bs-interval="2000">
-              <img src="../../../assets/images/1_logo.png" alt="sponsor2">
+              <img src="assets/images/1_logo.png" alt="sponsor2">
             </div>
             <div class="carousel-item " data-bs-interval="2000">
-              <img src="../../../assets/images/3_logo.png" alt="sponsor3">
+              <img src="assets/images/3_logo.png" alt="sponsor3">
             </div>
             <div class="carousel-item" data-bs-interval="2000">
-              <img src="../../../assets/images/4_logo.png" alt="sponsor4">
+              <img src="assets/images/4_logo.png" alt="sponsor4">
             </div>
             <div class="carousel-item" data-bs-interval="2000">
-              <img src="../../../assets/images/5_logo.png" alt="sponsor5">
+              <img src="assets/images/5_logo.png" alt="sponsor5">
             </div>
           </div>
         </div>
@@ -353,7 +353,7 @@
     </div>
   </div>
 </section>
-<!---->
+<!-- page 7 -->
 <section class="ourevents page-section  mb-5 mt-5 " id="team">
   <div class="container">
     <div class="card mb-3 mb-5 ">
@@ -361,11 +361,10 @@
         <div class="col-12 col-lg-8">
           <div class="card-body">
             <div class="details">
-              <h5 class="card-title  text-success fs-4">Testimonials</h5>
-              <p class="card-text fw-bold fs-1">What People Say About
-                Our Organization</p>
+              <h2 class="card-title  text-success fs-4">Testimonials</h2>
+              <h3 class="testmonial card-text fw-bold fs-1">What People Say About
+                Our Organization</h3>
             </div>
-
 
             <div id="events" class="carousel carousel-dark slide" data-bs-ride="carousel">
               <div class="carousel-indicators">
@@ -376,11 +375,7 @@
               </div>
               <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="2000">
-                  <p class="card-text w-75"><small class="text-muted">Neque ornare aenean euismod elementum nisi quis
-                      eleifend.
-                      Interdum velit euismod in pellentesque. Tempor orci eu lobortis elementum nibh tellus. Enim diam
-                      vulputate
-                      ut pharetra sit amet aliquam.
+                  <p class="card-text w-75"><small class="text-muted">We have to understand and address the history of Indigenous People and how all of the really brutal and violent history has removed us from a lot of our food...
                     </small></p>
 
 
@@ -396,11 +391,7 @@
                   </div>
                 </div>
                 <div class="carousel-item " data-bs-interval="2000">
-                  <p class="card-text w-75"><small class="text-muted">Neque ornare aenean euismod elementum nisi quis
-                      eleifend.
-                      Interdum velit euismod in pellentesque. Tempor orci eu lobortis elementum nibh tellus. Enim diam
-                      vulputate
-                      ut pharetra sit amet aliquam.
+                  <p class="card-text w-75"><small class="text-muted">Food banks and food pantries near you may be looking for food donations this Thanksgiving, learn who is accepting donations and what other ways you can help food banks.
                     </small></p>
 
 
@@ -417,11 +408,7 @@
                 </div>
 
                 <div class="carousel-item " data-bs-interval="3000">
-                  <p class="card-text w-75"><small class="text-muted">Neque ornare aenean euismod elementum nisi quis
-                      eleifend.
-                      Interdum velit euismod in pellentesque. Tempor orci eu lobortis elementum nibh tellus. Enim diam
-                      vulputate
-                      ut pharetra sit amet aliquam.
+                  <p class="card-text w-75"><small class="text-muted">It is our mission to end hunger in America. Learn more about four Black inventors helped pave the way for U.S. farmers to grow more food.
                     </small></p>
 
 
@@ -441,7 +428,7 @@
           </div>
         </div>
         <div class=" col-10 col-md-6 m-auto col-lg-4 mt-5 right_iamge">
-          <img src="../../assets/images/page6.jpg" class="img-fluid rounded-5 me-2 " alt="...">
+          <img src="assets/images/p 6 abaout 6.jpeg" class="img-fluid rounded-5 me-2 " alt="...">
         </div>
 
         <img src="https://harity.templatekit.co/wp-content/uploads/sites/49/2022/06/heart.png"
@@ -455,8 +442,8 @@
 
 
 <!-- Our Team -->
-<section class="page-section  mb-5 mt-5 " id="team">
-  <div class="container6 pt-4">
+<section class="page-section teams mb-5 mt-5 " id="team">
+  <div class="container pt-4">
     <div class="text-center">
       <h2 class="">Our Amazing Team</h2>
       <h3 class="">Join Us on Our Journey to Help peopel aroung the world</h3>
@@ -472,7 +459,7 @@
       </div>
       <div class="col-12 col-md-6 col-lg-3">
         <div class="team-member">
-          <img class=" rounded-circle"src="../../../assets/Menna-removebg-preview.png"
+          <img class=" rounded-circle"src="https://avatars.githubusercontent.com/u/76659267?v=4"
             alt="..." />
           <h4 class="h4">Menna Kamal</h4>
           <p class="text-muted">web Marketer</p>
@@ -480,15 +467,15 @@
       </div>
       <div class="col-12 col-md-6 col-lg-3">
         <div class="team-member">
-          <img class=" rounded-circle"  src="../../../assets/Nora-removebg-preview.png"
+          <img class=" rounded-circle"  src="https://avatars.githubusercontent.com/u/121295799?v=4"
             alt="..." />
-          <h4 class="h4" style="width:135px ;">Noran Nabel</h4>
-          <p class="text-muted" style="width:135px ;">web Developer</p>
+          <h4 class="h4" >Noran Nabel</h4>
+          <p class="text-muted" >web Developer</p>
         </div>
       </div>
       <div class="col-12 col-md-6 col-lg-3">
         <div class="team-member">
-          <img class=" rounded-circle"src="../../../assets/Hussien-removebg-preview.png"
+          <img class=" rounded-circle"src="https://avatars.githubusercontent.com/u/118007686?v=4"
             alt="..." />
           <h4 class="h4">Hussien Tarek</h4>
           <p class="text-muted">web Designer</p>
@@ -496,7 +483,7 @@
       </div>
       <div class="col-12 col-md-6 col-lg-3">
         <div class="team-member">
-          <img class=" rounded-circle"  src="../../../assets/images/3.jpg"
+          <img class=" rounded-circle"  src="https://avatars.githubusercontent.com/u/57658169?v=4"
             alt="..." />
           <h4 class="h4">Yusuf saied</h4>
           <p class="text-muted">web Marketer</p>
@@ -509,4 +496,3 @@
 
 
 <app-footer></app-footer>
-

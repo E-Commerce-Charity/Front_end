@@ -12,6 +12,8 @@ export class NavbarComponent implements OnInit {
   data: any;
   numOfCartItems: any;
   logged: any = false;
+  nav:any;
+  Sticky:any;
   router: any;
   constructor(
     private service: CartService,
@@ -22,6 +24,7 @@ export class NavbarComponent implements OnInit {
     this.getCart();
 
     this.logged = this.authService.isLoggedIn();
+    this.sticky()
   }
   getCart() {
     this.service.getCart().subscribe((res) => {
@@ -36,4 +39,22 @@ export class NavbarComponent implements OnInit {
     this.logged = false;
     this.route.navigateByUrl('/', { replaceUrl: true });
   }
+
+  sticky(){
+    this.nav = document.querySelector('nav');
+    // console.log(this.nav);
+    this.Sticky = this.nav.offsetHeight;
+    // console.log(this.Sticky);
+      window.onscroll = ()=> {
+        if (window.pageYOffset >= this.Sticky) {
+          // console.log("hhhe");
+          // console.log(this.nav);
+            this.nav.classList.add("sticky");
+        } else {
+            this.nav.classList.remove("sticky");
+        }
+      }
+  }
+
+
 }
