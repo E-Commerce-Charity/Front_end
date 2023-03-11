@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 
 #footer {
-  color: #000;
+  color: var(--e-global-color-primary);
   /* background: #f1f0f2; */
   /* position: relative;
   */
@@ -15,7 +15,7 @@
 }
 
 #footer .footer-top h4 {
-  color: #000;
+  color: var(--e-global-color-primary);
   font-size: 1.1rem;
   font-weight: 600;
   line-height: 1.4em;
@@ -31,7 +31,7 @@
   line-height: 1.4em;
   font-weight: 500;
   color: #6f7775;
-  padding: 20px 0px 20px 0px;
+  padding: 0px 0px 20px 0px;
   padding-right: 50px;
   font-family: "poppins", sans-serif;
   font-size: 1em;
@@ -179,7 +179,7 @@
 }
 
 .footer-newsletter h5 {
-  color: #000;
+  color: var(--e-global-color-primary);
   font-size: 1.1rem;
   font-weight: 600;
   line-height: 1.4em;
@@ -195,3 +195,30 @@
 /* .icon-box-content {
   display: inline-block;
 } */
+
+.logo {
+  margin-top:-30px;
+}
+
+.logo a
+{
+  text-decoration: none;
+  display: flex;
+  gap:0px;
+  font-size: 2rem!important;
+  color:var(--e-global-color-primary);
+  font-weight: 700!important;
+  align-items: center;
+}
+
+.logo a span
+{
+  font-size: 2rem!important;
+  color:var(--e-global-color-primary);
+  font-weight: 700!important;
+}
+.logo a img
+{
+width:80px;
+height:90px;
+margin-right:-10px;}

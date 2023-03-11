@@ -661,6 +661,29 @@ p.card-text {
 
 @media (max-width:767px) {
 
+  header .container {
+    padding-top: 100px;
+    padding-bottom: 150px
+  }
+  
+  header .container .header__context {
+    padding-top: 10px
+  }
+  section.aboutus .content .aboutus__images .image_1 {
+    max-width: 400px;
+    height: 420px;
+  }
+
+  section.aboutus .content .aboutus__images .image_2 {
+    height: 260px;
+  }
+h2 {
+  font-size: 1.9rem!important;
+}
+h3 
+{
+  font-size: 2rem!important;
+}
   section.aboutus .overlay,
   section.our-mission .our-mission__roles .roles__btns .btn {
     width: 100%
@@ -715,9 +738,7 @@ p.card-text {
   transform: none;
   perspective-origin: 1000;
   transform: scaleZ(1.2);
-  box-shadow: .1px .1px 2px var(--gray);
   transition: .6s ease-in-out;
-  border-radius: 10px;
   opacity: .5
 }
 
@@ -729,9 +750,6 @@ p.card-text {
   max-width: 100%
 }
 
-.sponsors .carousel-item.active img {
-  box-shadow: .5px .5px 10px var(--bit-lightgrey)
-}
 
 .page-section.ourevents .card {
   border: none;
@@ -757,7 +775,14 @@ p.card-text {
 
 .team-member img {
   max-width: 250px;
-  max-height: 350px;
+  max-height: 250px;
   height: 250px;
   box-shadow: 0 0 10px #eee
 }
+
+.teams 
+{
+  padding:30px 0px;
+  background: url("https://harity.templatekit.co/wp-content/uploads/sites/49/2022/06/bg_goal.jpg") center/cover no-repeat;
+}
+
