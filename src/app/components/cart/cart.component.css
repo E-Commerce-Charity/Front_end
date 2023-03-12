@@ -131,9 +131,10 @@ input {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
-table tfoot {
+table .foot {
   width: 100%;
 }
 table tfoot tr th {
@@ -144,7 +145,7 @@ table tfoot tr th {
   color: var(--e-global-color-primary);
 }
 
-tfoot button.btn {
+.foot button.btn {
   background-color: var(--e-global-color-accent);
   color: white;
   border: none;
@@ -158,19 +159,19 @@ tfoot button.btn {
   transition: all 0.3s ease-in-out;
 }
 
-tfoot button.btn.order {
+.foot button.btn.order {
   background: transparent;
   color: var(--e-global-color-accent);
 }
-tfoot button.btn.order:hover {
+.foot button.btn.order:hover {
   color: var(--e-global-color-c90c6a5);
 }
 
-tfoot button.btn:hover {
+.foot button.btn:hover {
   background-color: var(--e-global-color-2acdf8f);
 }
 
-tfoot th span {
+.foot span {
   color: var(--e-global-color-accent);
   font-size: 1.3em;
   font-weight: 600;
@@ -224,3 +225,63 @@ header:before {
   background-color: orange;
   margin-left: 0.2rem;
 }
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+header {
+  font-family: Poppins;
+  position: relative;
+  background: linear-gradient(0deg, rgba(43, 69, 55, .7), rgba(126, 158, 141, .7), rgba(89, 101, 94, .7)) 0 0/cover, url("../../../assets/header.jpg") 0 0/cover no-repeat;
+  padding-top: 20rem;
+  padding-bottom: 6rem;
+  top: -100px
+}
+
+header:before {
+  content: "";
+  position: absolute;
+  background-color: #000;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: .5
+}
+.line {
+  width: 5rem;
+  padding: .1rem;
+  background-color: orange;
+  margin-left: .2rem
+}
+
+div.foot 
+{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width:100%;
+  min-width:500px;
+  gap:15px;
+  padding:10px;
+  align-items: center;
+  text-align: center;
+  color:var(--e-global-color-primary)
+;
+font-weight:500}
+
+@media(max-width:767px)
+{
+
+  .headCart 
+  {
+    justify-content: center;
+    align-items: center;
+  }
+  .cartBox
+  {
+    overflow-x: scroll;
+  }
+}
+

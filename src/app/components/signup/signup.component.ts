@@ -21,7 +21,7 @@ export class SignupComponent implements OnInit {
   localToken: any;
   formValid: boolean | undefined;
   role: any = 'user';
-
+  wait:any="none";
   user: {
     name: string;
     email: string;
@@ -160,8 +160,10 @@ export class SignupComponent implements OnInit {
     }
 
     console.log(this.signUpForm.value); //user
+    this.wait = 'block';
     this.myService.createUser(this.signUpForm.value).subscribe(
       (response) => {
+        this.wait = 'none';
         this.token = response.token;
         console.log(this.token);
         localStorage.setItem('token', this.token);
@@ -173,9 +175,11 @@ export class SignupComponent implements OnInit {
         console.log(this.role);
 
         // Navigate to the home path
-        this.router.navigateByUrl('/', { replaceUrl: true });
+        this.router.navigateByUrl('/login', { replaceUrl: true });
       },
       (error) => {
+        this.wait = 'none';
+
         console.log(error);
       }
     );
