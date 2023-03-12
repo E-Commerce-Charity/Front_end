@@ -40,7 +40,10 @@ export class ForgetpasswordComponent implements OnInit {
         this.openPopup();
         this.src="assets/okay.gif";
         this.message= 'Check your email 🤩 🥳';
-        this.router.navigateByUrl('/login', { replaceUrl: true });
+        setTimeout(() => {
+          this.router.navigateByUrl('/login', { replaceUrl: true });
+          
+        }, 1500);
 
       },
       (err) => {

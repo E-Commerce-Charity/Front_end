@@ -47,7 +47,7 @@ this.mybutton.addEventListener("click", this.backToTop);
 loader(){
 
   window.addEventListener('load', ()=> {
-   document.body.style.overflow = 'hidden';
+    
    this.loaderElem = document.querySelector(".loader img")
    setTimeout(() => {
      document.body.style.overflow =  'auto';

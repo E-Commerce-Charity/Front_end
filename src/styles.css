@@ -69,7 +69,9 @@ section.statistics .container > div {
   z-index: 5;
   top: -50px;
 }
-
+section.statistics .container .statistics_item:first-of-type{
+  border-radius: 5px 0px 0px 5px;
+}
 section.statistics .container .statistics_item,
 .statistics_clickable {
   padding: 50px 20px 20px 20px;
@@ -200,13 +202,15 @@ div.user-detail p.name {
   font-size: 1.1rem;
   margin: 5px 0px;
   font-weight: 600;
+  padding: 0;
+
 }
 
 div.user-detail p.designation {
   color: var(--e-global-color-secondary);
   font-size: 0.7rem;
   font-weight: 500;
-
+  padding: 0;
   margin: 0px;
 }
 
@@ -695,13 +699,15 @@ top: 50%;
   .loading {
     z-index: 10000;
     font-size: 25px;
+    margin-top:20px;
+    left:-10px;
 }
 .loader img {
-    margin-top: 100px;
+    margin-top: 50px;
     width: 190px;
-    height: 150px;
+    height: 180px;
     margin: 100px auto 200px;
-    left: 20%;
+    left: 38%;
     top: 100px;
 }
 .loader::before {
@@ -709,6 +715,9 @@ top: 50%;
 }
 .loader::after {
     right: -387px;
+}
+section.statistics .container .statistics_item:nth-of-type(1){
+  border-radius: 5px 5px 0px 0px;
 }
 }
 
@@ -718,17 +727,20 @@ top: 50%;
       font-size: 30px;
   }
   .loader img {
-      margin-top: 100px;
-      width: 180px;
-      height: 150px;
+      margin-top: 0px;
+      width: 190px;
+      height: 200px;
       margin: 100px auto 200px;
-      left: 24%;
+      left: 29%;
       top: 100px;
   }
 }
 
 
 @media (min-width: 768px) and (max-width: 992px) {
+  section.statistics .container .statistics_item:nth-of-type(2){
+    border-radius: 0px 5px 0px 0px;
+  }
   .main-about .img::before {
     top: -120px;
     left: -80px;
@@ -758,12 +770,13 @@ top: 50%;
     width: 250px;
     height: 150px;
     margin: 100px auto 200px;
-    left: 32%;
+    left: 37%;
     top: 100px;
 }
 }
 
 @media (min-width: 993px) and (max-width: 1200px) {
+
   .main-about .img::before {
     top: -120px;
     left: -80px;
@@ -920,4 +933,21 @@ top: 50%;
 .dropdown-content a:hover 
 {
   color:var(--e-global-color-accent)
+}
+
+body 
+{
+  overflow: hidden;
+}
+
+@media screen and (max-width:400px)
+{
+  .loading{
+    overflow: hidden;
+  }
+  .loader{
+    overflow: hidden;
+    max-width: 400px;
+  }
+
 }

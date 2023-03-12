@@ -22,13 +22,15 @@ header {
   background-repeat: no-repeat;
   background-attachment: fixed;
   width: 100%;
-  color: #fff
+  color: #fff;
+  position: relative;
+  top:-100px;
 }
 
 header .container {
   padding-top: 180px;
   height: 100%;
-  padding-bottom: 200px
+  padding-bottom: 120px
 }
 
 header .container .header__context {
@@ -786,3 +788,14 @@ h3
   background: url("https://harity.templatekit.co/wp-content/uploads/sites/49/2022/06/bg_goal.jpg") center/cover no-repeat;
 }
 
+
+.products-section 
+{
+  padding-top:10px;
+  background-color: #fefefec5;
+}
+
+section.statistics .container > div {
+  top: -130px;
+  z-index:55
+}

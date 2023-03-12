@@ -54,7 +54,7 @@ p {
 } */
 
 .navbar {
-  z-index: 2;
+  z-index: 100000000000000000000000000000000002;
   display: flex;
   visibility: visible;
   padding:0px;
@@ -394,4 +394,19 @@ nav.navbar.sticky {
   padding-left:0px;
   margin-left:-20px;
 }
+}
+
+
+html 
+{
+  position: relative;
+  z-index: 1000000;
+  height:80px;
+  top:10px;
+}
+
+body 
+{
+  height:auto;
+  min-height: 300px;
 }
