@@ -14,6 +14,7 @@ body
   /* background-color: aqua; */
   display: flex;
   justify-content: space-between;
+  background-color: #fff;
   /* border: 1px solid rgba(153, 152, 152, 0.558); */
   box-shadow: 0px 0px 22px #e7e6e662, -20px -20px 62px #ffffffd2;
   /* align-items: center; */
@@ -88,8 +89,8 @@ form h6 a {
     margin-top: 0;
   }
   .photo {
-    display: none;
-  }
+    width:100%  }
+
 }
 
 #password button mat-icon {
@@ -224,4 +225,27 @@ button.eye
   border:1px solid #ced4da;
   border-left:0px;
   border-radius: 5px;;
+}
+
+.sign{
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  background-color: #009368;
+  color: white;
+  margin-top: 50px !important;
+  transition: all .5s linear;
+}
+.sign:hover {
+  background-color: #007c57;
+}
+html {
+  height: auto;
+}
+
+body 
+{
+  background: #b2ded121;
+
 }

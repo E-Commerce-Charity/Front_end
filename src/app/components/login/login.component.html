@@ -13,8 +13,8 @@
 
 <body>
   <div class="container row m-auto">
-    <div class="col-12 col-md-10 contain-login mx-auto">
-      <div class="login">
+    <div class="col-12 row col-md-10 contain-login mx-auto">
+      <div class="col-12 col-md-5 login">
         <h1>Login</h1>
         <br />
         <form class="row" [formGroup]="loginForm" (ngSubmit)="onSubmit()" #form="ngForm">
@@ -141,7 +141,7 @@
             <a routerLink="/forgetpassword">forget Password?</a>
           </p>
           <div class="col-lg-12">
-            <button class="btn submit" type="submit" (click)="validate()">Sign in</button>
+            <button class="btn submit sign" type="submit" (click)="validate()">Sign in</button>
           </div>
           <div class="col-lg-12">
             <p class="paragraph">Don't have an account yet?</p>
@@ -153,7 +153,7 @@
 
         </form>
       </div>
-      <div class="photo">
+      <div class="col-12 col-md-5 photo">
 
       
         <svg class="animated" id="freepik_stories-mobile-login" xmlns="http://www.w3.org/2000/svg"
@@ -526,6 +526,24 @@
       </div>
     </div>
   </div>
+
+  <div class="text-center spinnerLoader" [ngStyle]="{'display':wait}">
+    <div class="lds-spinner">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
     crossorigin="anonymous"></script>

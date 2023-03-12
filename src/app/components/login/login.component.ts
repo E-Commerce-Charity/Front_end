@@ -42,7 +42,7 @@ export class LoginComponent {
   token: any;
   id: any;
   reactiveForm: any;
-
+  wait:any='none';
   constructor(
     public myService: userService,
     public authService: AuthService,
@@ -94,8 +94,12 @@ export class LoginComponent {
   }
 
   onSubmit() {
+    this.wait = "block";
     this.authService.login(this.loginForm.value).subscribe(
       (response) => {
+
+        this.wait = "none";
+      
         // If the login is successful, redirect the user to the home page
         // and store the user's token in local storage
         localStorage.setItem('token', response.token);
@@ -124,6 +128,7 @@ export class LoginComponent {
         localStorage.setItem('logged', this.isLogged);
       },
       (error) => {
+        this.wait = "none";
         // If the login fails, display an error message
         console.log('Login failed', error);
         this.emailRes = error.error.message;

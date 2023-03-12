@@ -9,6 +9,7 @@ import { OrderService } from '../../Services/order.service';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
+  title = 'Cart 🛒';
   allProducts: any;
   productId: any;
   sold: any;
@@ -25,9 +26,11 @@ export class CartComponent implements OnInit {
     quantity: Number;
     price: Number;
     title: String;
+    images:any;
   }[] = [];
 
   total: any;
+  image:any;
   totalQuantity: number = 0;
   itemsNumber: any;
   ngOnInit(): void {
@@ -40,6 +43,8 @@ export class CartComponent implements OnInit {
   getProductById(id: any) {
     return this.productService.getProductById(id).subscribe((res: any) => {
       this.sold = res.data.sold;
+      this.image = res.data.images[0];
+      console.log(res.data);
       console.log('to get sold', this.sold);
     });
   }
@@ -85,11 +90,23 @@ export class CartComponent implements OnInit {
     }
   }
 
+  
+  // getImage() {
+  //   for (let x in this.cartProducts) {
+  //     this.image =
+  //       this.allProducts[x].images;
+  //       console.log(this.image);
+  //   }
+  // }
+
+
   addAmount(item: any) {
     return this.productService
       .getProductById(item.product)
       .subscribe((res: any) => {
         this.sold = res.data.sold;
+        this.image = res.data.images[0];
+        console.log(this.image);
         if (this.sold + item.quantity < res.data.quantity) {
           this.service.addToCart(item.product).subscribe((res: any) => {
             console.log(res);
@@ -133,13 +150,17 @@ export class CartComponent implements OnInit {
   orderMeals() {
     return this.orderService.createOrder(this.cartId).subscribe((res: any) => {
       console.log(res);
-      // this.router.navigateByUrl('/cart', { skipLocationChange: true });
+      this.router.navigateByUrl('/thanks', { skipLocationChange: true });
     });
   }
 
   orderCash() {
     return this.orderService
       .createCashOrder(this.cartId)
-      .subscribe((res: any) => {});
+      .subscribe((res: any) => {
+        this.router.navigateByUrl('/thanks', { skipLocationChange: true });
+
+      });
   }
+
 }
