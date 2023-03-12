@@ -160,3 +160,8 @@ p.card-text {
 .donation-num span {
   color: var(--e-global-color-accent);
 }
+
+.card 
+{
+  margin:auto
+}

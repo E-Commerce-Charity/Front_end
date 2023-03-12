@@ -6,6 +6,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./about.css'],
 })
 export class AboutComponent {
+  title="About us";
   authorized: boolean;
 
   constructor(private route: ActivatedRoute) {

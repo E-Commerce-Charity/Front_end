@@ -36,7 +36,6 @@ import {
 } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { AboutHeaderComponent } from './components/about/about-header/about-header.component';
 import { YsectionComponent } from './components/ysection/ysection.component';
 import { ThanksComponent } from './components/thanks/thanks.component';
 import { HomeCardComponent } from './components/home-card/home-card.component';
@@ -54,7 +53,6 @@ import { ThanksDonationComponent } from './components/thanks-donation/thanks-don
     SignupComponent,
     HeaderComponent,
     CardComponent,
-    AboutHeaderComponent,
     ErrorComponent,
     LoginComponent,
     HomeComponent,
@@ -98,7 +96,6 @@ import { ThanksDonationComponent } from './components/thanks-donation/thanks-don
 
 
   ],
-  exports: [AboutHeaderComponent, CardComponent],
 
   providers: [
     {

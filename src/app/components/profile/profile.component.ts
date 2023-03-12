@@ -9,6 +9,7 @@ import { userService } from 'src/app/Services/user.service';
   styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent implements OnInit {
+  title:any="profile";
   id: any;
   users: any;
   user: any;

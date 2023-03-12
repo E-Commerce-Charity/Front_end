@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PasswordService } from 'src/app/Services/password.service';
 import { Router } from '@angular/router';
 @Component({
@@ -6,11 +6,29 @@ import { Router } from '@angular/router';
   templateUrl: './forgetpassword.component.html',
   styleUrls: ['./forgetpassword.component.css'],
 })
-export class ForgetpasswordComponent {
+export class ForgetpasswordComponent implements OnInit {
   constructor(private service: PasswordService, private router: Router) {}
   url: any;
   x: any;
+  message:any;
+  src:any;
+  wait:any='none';
+   
+  ngOnInit() {
+
+  }
+  
+  displayStyle = "none";
+  
+  openPopup() {
+    this.displayStyle = "block";
+  }
+  closePopup() {
+    this.displayStyle = "none";
+  }
+
   forgetPassword(email: any) {
+    this.wait = "block";
     this.service.forgetPassword(email).subscribe(
       (res) => {
         this.x = res;
@@ -18,12 +36,19 @@ export class ForgetpasswordComponent {
         console.log(res);
         console.log(this.url);
         localStorage.setItem('url', this.url);
+        this.wait = "none";
+        this.openPopup();
+        this.src="assets/okay.gif";
+        this.message= 'Check your email 🤩 🥳';
         this.router.navigateByUrl('/login', { replaceUrl: true });
-        alert('Check your email');
+
       },
       (err) => {
-        alert(`        Invalid Email
-        please enter correct email`);
+        this.wait = "none";
+        this.openPopup();
+        this.src="assets/warning.gif";
+        this.message = `Invalid Email
+        please enter correct email 😔 `;
       }
     );
   }

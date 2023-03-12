@@ -1,3 +1,83 @@
+<app-navbar [data]="itemsNumber"></app-navbar>
+<app-header [title]="title"></app-header>
+<div class="container mt-5">
+  <div class="cartBox">
+    <h2 class="text-center mb-3">Shopping Cart 🛒</h2>
+    <div class="headCart">
+      <p class="fs-5 ">You have <label class="text-dannger">{{cartProducts.length}}</label> items in your cart</p>
+      <button class="btn clear" (click)="clearCart()" *ngIf="cartProducts.length>0">Clear shopping cart</button>
+    </div>
+    <table class="table table-striped" *ngIf="cartProducts.length>0">
+      <thead>
+        <tr class="text-center">
+          <th>image</th>
+          <th>Name</th>
+          <th>Donation value</th>
+          <th style="width:15%;">Quantity</th>
+          <th>Total</th>
+          <th>remove</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of cartProducts; let index=index">
+          <td><img
+              src="../../../assets/images/viewpoints-the-benefits-of-philanthropy-for-high-net-worth-investors-cover-1040x425.jpg"
+              alt=""></td>
+          <td class="title">{{item.title}}</td>
+          <td>{{item.price}} L.E</td>
+          <td>
+            <div class="quantity">
+              <button class="btn btn-dark me-2" (click)="minusAmount(item)">-</button>
+              <!-- <input class="mx-3" type="number" (change)="detectChange()" class="form-control"
+                [(ngModel)]="item.quantity" min="1">t -->
+              <span>{{item.quantity}}</span>
+              <button class="btn btn-dark ms-2" (click)="addAmount(item)">+</button>
+            </div>
+          </td>
+          <td>{{+item.price * +item.quantity}} L.E</td>
+          <td>
+            <button class="btn delete" (click)="deleteProduct(item)">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+      
+    </table>
+
+    <div class="foot"  *ngIf="cartProducts.length>0">
+      <div>
+      <button class="btn donate" (click)="orderMeals()"> Donate Meals </button>
+    <div>
+      Total quantity : <span>
+        {{totalQuantity}}
+      </span> Meals
+    </div>
+  </div>
+<div>
+    <button class="btn order" (click)="orderCash()">
+      Donate Now
+    </button>
+    <div >Total Donation : <span>
+        {{total}}
+      </span>L.E </div>
+    <div>
+    </div>
+  </div>
+
+  </div>
+  </div>
+
+
+  <div *ngIf="false" class="alert alert-success" role="alert"><strong>Well done!</strong> Your order is successfully
+    sent</div>
+</div>
+
+<app-footer></app-footer>
+
+
+
+
 <!-- <div class="context-header bg-light p-3 ">
   <div class="container ">
     <div class="row  justify-content-center fs-1">My Cart</div>
@@ -52,96 +132,3 @@
     </div>
   </div>
 </div> -->
-
-
-
-<app-navbar [data]="itemsNumber"></app-navbar>
-
-<header>
-  <div class="container position-relative header-text">
-    <div class="row ">
-      <div class="container ms-lg-5 ">
-        <div class="row text-light fw-bold">
-          <h1>Cart</h1>
-        </div>
-        <div class="row line"></div>
-        <div class="d-flex flex-row">
-          <p class="text-warning p-2">Home</p>
-          <p class="text-warning  p-2">>></p>
-          <p class="text-light p-2 fw-semibold fs-6">Cart</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
-
-
-<div class="container mt-5">
-  <div class="cartBox">
-    <h2 class="text-center mb-3">Shopping Cart 🛒</h2>
-    <div class="headCart">
-      <p class="fs-5 ">You have <label class="text-dannger">{{cartProducts.length}}</label> items in your cart</p>
-      <button class="btn clear" (click)="clearCart()" *ngIf="cartProducts.length>0">Clear shopping cart</button>
-    </div>
-    <table class="table table-striped" *ngIf="cartProducts.length>0">
-      <thead>
-        <tr class="text-center">
-          <th>image</th>
-          <th>Name</th>
-          <th>Donation value</th>
-          <th style="width:15%;">Quantity</th>
-          <th>Total</th>
-          <th>remove</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of cartProducts; let index=index">
-          <td><img
-              src="../../../assets/images/viewpoints-the-benefits-of-philanthropy-for-high-net-worth-investors-cover-1040x425.jpg"
-              alt=""></td>
-          <td class="title">{{item.title}}</td>
-          <td>{{item.price}} L.E</td>
-          <td>
-            <div class="quantity">
-              <button class="btn btn-dark me-2" (click)="minusAmount(item)">-</button>
-              <!-- <input class="mx-3" type="number" (change)="detectChange()" class="form-control"
-                [(ngModel)]="item.quantity" min="1">t -->
-              <span>{{item.quantity}}</span>
-              <button class="btn btn-dark ms-2" (click)="addAmount(item)">+</button>
-            </div>
-          </td>
-          <td>{{+item.price * +item.quantity}} L.E</td>
-          <td>
-            <button class="btn delete" (click)="deleteProduct(item)">
-              <i class="fas fa-trash-alt"></i>
-            </button>
-          </td>
-        </tr>
-      </tbody>
-      <tfoot *ngIf="cartProducts.length>0">
-        <tr>
-          <th>
-            <button class="btn donate" (click)="orderMeals()"> Donate Meals </button>
-          </th>
-          <th>
-            Total quantity : <span>
-              {{totalQuantity}}
-            </span> Meals
-          </th>
-          <th></th>
-          <th></th>
-          <th>Total Donation : <span>
-              {{total}}
-            </span>L.E </th>
-          <th><button class="btn order" (click)="orderCash()">
-              Donate Now
-            </button></th>
-        </tr>
-      </tfoot>
-    </table>
-  </div>
-  <div *ngIf="false" class="alert alert-success" role="alert"><strong>Well done!</strong> Your order is successfully
-    sent</div>
-</div>
-
-<app-footer></app-footer>

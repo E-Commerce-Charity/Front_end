@@ -9,6 +9,7 @@ import { OrderService } from '../../Services/order.service';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
+  title = 'Cart 🛒';
   allProducts: any;
   productId: any;
   sold: any;
@@ -133,7 +134,7 @@ export class CartComponent implements OnInit {
   orderMeals() {
     return this.orderService.createOrder(this.cartId).subscribe((res: any) => {
       console.log(res);
-      // this.router.navigateByUrl('/cart', { skipLocationChange: true });
+      this.router.navigateByUrl('/cart', { skipLocationChange: true });
     });
   }
 
