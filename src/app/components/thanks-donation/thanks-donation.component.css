@@ -56,3 +56,131 @@
   margin-left: 0.7em;
   fill: #cb9712;
 }
+
+svg#freepik_stories-appreciation:not(.animated) .animable {
+  opacity: 0;
+}
+
+svg#freepik_stories-appreciation.animated #freepik--background-simple--inject-62 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) slideUp;
+  animation-delay: 0s;
+}
+
+svg#freepik_stories-appreciation.animated #freepik--Shadow--inject-62 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) slideRight;
+  animation-delay: 0s;
+}
+
+svg#freepik_stories-appreciation.animated #freepik--Plants--inject-62 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) zoomIn;
+  animation-delay: 0s;
+}
+
+svg#freepik_stories-appreciation.animated #freepik--Character--inject-62 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) slideLeft;
+  animation-delay: 0s;
+}
+
+svg#freepik_stories-appreciation.animated #freepik--Balloon--inject-62 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) slideUp;
+  animation-delay: 0s;
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: inherit;
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+  /*error page*/
+                        
+
+  section.error 
+  {
+    margin-top:50px;
+  }
+
+.error img {
+    max-height: 400px;
+    margin-top: 80px
+}
+
+.error h1 {
+    font-weight: 700;
+    color: var(--e-global-color-secondary);
+    font-size: 60px;
+}
+
+.error p {
+    color: var(--e-global-color-primary);
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.error button {
+    border-radius: 5px;
+    padding: 10px;
+    margin: 15px 0px;
+    border:none;
+    outline: none;
+    background-color: var(--e-global-color-secondary);
+}
+
+.error button a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.errornav{
+    background: var(--e-global-color-primary)!important;
+    height:80px;
+}
+
+nav 
+{
+    position: absolute;
+    top:0;
+    left:0
+}

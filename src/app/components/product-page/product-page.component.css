@@ -9,6 +9,8 @@ body {
   /* position: relative;
   top: 30%; */
 
+    padding-top:10px;
+    background-color: #fefefec5;
   margin: 16px 0;
 }
 

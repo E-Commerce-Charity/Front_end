@@ -48,13 +48,20 @@ export class ResetpasswordComponent implements OnInit {
         this.openPopup();
         this.src="assets/okay.gif";
         this.message= 'password set correctly 🤩 🥳';
-
+        setTimeout(() => {
+          this.router.navigateByUrl('/login', { replaceUrl: true });
+          
+        }, 1500);
       },
       (err) => {
         this.wait = "none";
         this.openPopup();
         this.src="assets/warning.gif";
         this.message = `Invalid password😔 `;
+        setTimeout(() => {
+          this.router.navigateByUrl('/login', { replaceUrl: true });
+          
+        }, 1500);
       }
     );
   }
