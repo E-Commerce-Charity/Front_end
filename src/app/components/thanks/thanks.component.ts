@@ -7,4 +7,6 @@ import { FooterComponent } from '../footer/footer.component';
   templateUrl: './thanks.component.html',
   styleUrls: ['./thanks.component.css'],
 })
-export class ThanksComponent {}
+export class ThanksComponent {
+  title="thanks"
+}
