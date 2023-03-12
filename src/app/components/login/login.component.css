@@ -88,8 +88,8 @@ form h6 a {
     margin-top: 0;
   }
   .photo {
-    display: none;
-  }
+    width:100%  }
+
 }
 
 #password button mat-icon {
