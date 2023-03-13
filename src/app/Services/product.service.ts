@@ -29,7 +29,7 @@ export class ProductService {
   // }
 
   getAllProducts(total: any) {
-    return this.http.get('http://localhost:3000/products/', {
+    return this.http.get('https://harity.onrender.com/products/', {
       // params: this.params,
       params: new HttpParams().set('page', '1').set('limit', total),
       // params: new HttpParams().set('page', '1').set('limit', '6'),
@@ -37,7 +37,7 @@ export class ProductService {
   }
 
   getProductByCategoryAndPrice(total: any, category: any, price: any) {
-    return this.http.get('http://localhost:3000/products/', {
+    return this.http.get('https://harity.onrender.com/products/', {
       // params: this.params,
       params: new HttpParams()
         .set('page', '1')
@@ -50,7 +50,7 @@ export class ProductService {
   }
 
   getProductByCategory(total: any, category: any) {
-    return this.http.get('http://localhost:3000/products/', {
+    return this.http.get('https://harity.onrender.com/products/', {
       // params: this.params,
       params: new HttpParams()
         .set('page', '1')
@@ -60,7 +60,7 @@ export class ProductService {
   }
 
   getProductByPrice(total: any, price: any) {
-    return this.http.get('http://localhost:3000/products/', {
+    return this.http.get('https://harity.onrender.com/products/', {
       // params: this.params,
       params: new HttpParams()
         .set('page', '1')
@@ -72,7 +72,7 @@ export class ProductService {
   }
   updateSold(id: any, sold: any) {
     return this.http.put(
-      `http://localhost:3000/products/${id}`,
+      `https://harity.onrender.com/products/${id}`,
       {
         sold: +sold + 1,
       },
@@ -83,7 +83,7 @@ export class ProductService {
   }
 
   getProductById(id: any) {
-    return this.http.get(`http://localhost:3000/products/${id}`, {
+    return this.http.get(`https://harity.onrender.com/products/${id}`, {
       headers: this.headers,
     });
   }

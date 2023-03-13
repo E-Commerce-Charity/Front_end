@@ -10,7 +10,7 @@ export class PasswordService {
   constructor(private http: HttpClient) {}
 
   forgetPassword(email: any) {
-    return this.http.post('http://localhost:3000/auth/forgotpassword', {
+    return this.http.post('https://harity.onrender.com/auth/forgotpassword', {
       email: email,
     });
   }

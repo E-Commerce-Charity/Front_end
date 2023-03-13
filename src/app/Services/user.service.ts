@@ -17,7 +17,7 @@ export class userService {
 
   users: any;
   tokken: any = localStorage.getItem('token');
-  private baseUrl = 'http://localhost:3000/users/';
+  private baseUrl = 'https://harity.onrender.com/users/';
 
   constructor(private http: HttpClient) {}
   getAllUsers() {
@@ -27,7 +27,7 @@ export class userService {
   }
 
   createUser(user: any) {
-    return this.http.post<any>(`http://localhost:3000/auth/register`, user);
+    return this.http.post<any>(`https://harity.onrender.com/auth/register`, user);
   }
 
   getUserById(id: any) {
@@ -46,10 +46,10 @@ export class userService {
     return this.http.delete(`${this.baseUrl}${id}`);
   }
   GetOrder() {
-    return this.http.get('http://localhost:3000/oreders/', this.options);
+    return this.http.get('https://harity.onrender.com/oreders/', this.options);
   }
   login(user: any) {
-    return this.http.post<any>(`http://localhost:3000/auth/login`, user);
+    return this.http.post<any>(`https://harity.onrender.com/auth/login`, user);
   }
 
   checkEmailExists(email: string): Observable<boolean> {
