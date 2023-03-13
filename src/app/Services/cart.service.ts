@@ -15,14 +15,14 @@ export class CartService {
   });
   getCart() {
     console.log(this.auth_token);
-    return this.http.get('http://localhost:3000/cart', {
+    return this.http.get('https://harity.onrender.com/cart', {
       headers: this.headers,
     });
   }
 
   addToCart(productId: any) {
     return this.http.post(
-      'http://localhost:3000/cart/',
+      'https://harity.onrender.com/cart/',
       {
         productId: productId,
       },
@@ -33,7 +33,7 @@ export class CartService {
   }
   reduceQuantity(productId: any) {
     return this.http.post(
-      'http://localhost:3000/cart/',
+      'https://harity.onrender.com/cart/',
       {
         productId: productId,
         minus: true,
@@ -45,13 +45,13 @@ export class CartService {
   }
 
   deleteProduct(productId: any) {
-    return this.http.delete(`http://localhost:3000/cart/${productId}`, {
+    return this.http.delete(`https://harity.onrender.com/cart/${productId}`, {
       headers: this.headers,
     });
   }
 
   clearCart() {
-    return this.http.delete('http://localhost:3000/cart/', {
+    return this.http.delete('https://harity.onrender.com/cart/', {
       headers: this.headers,
     });
   }

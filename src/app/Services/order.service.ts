@@ -15,14 +15,14 @@ export class OrderService {
 
   createOrder(cartId: any) {
     return this.http.post(
-      `http://localhost:3000/oreders/${cartId}`,
+      `https://harity.onrender.com/oreders/${cartId}`,
       { paymentMethodType: 'meals' },
       { headers: this.headers }
     );
   }
   createCashOrder(cartId: any) {
     return this.http.post(
-      `http://localhost:3000/oreders/${cartId}`,
+      `https://harity.onrender.com/oreders/${cartId}`,
       { paymentMethodType: 'cash' },
       { headers: this.headers }
     );

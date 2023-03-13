@@ -8,10 +8,10 @@ export class CategoryService {
   constructor(private http: HttpClient) {}
 
   getAllCategories() {
-    return this.http.get('http://localhost:3000/category');
+    return this.http.get('https://harity.onrender.com/category');
   }
 
   getCategoryById(id: any) {
-    return this.http.get(`http://localhost:3000/category/${id}`);
+    return this.http.get(`https://harity.onrender.com/category/${id}`);
   }
 }
