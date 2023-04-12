@@ -38,19 +38,17 @@ export class HomeComponent implements  OnInit  {
 
  
   this.header = document.getElementById('header');
-  console.log(this.header);
-  console.log(this.header.offsetHeight);
-  console.log(window.pageYOffset);
-   console.log(this.arr);
+
+
 
 
    let check:any=false;
    window.addEventListener('scroll',()=>{
     if(!check){
-    console.log("hi");
+  
     let timer:any;
     if (window.pageYOffset >= this.header.offsetHeight -550) {
-      console.log("hi");
+     
       this.arr.map((item:any,index:any)=>{
         for(let i=1; i<=this.Maxarr[index];i++){
           timer = setTimeout(() => {
@@ -62,7 +60,7 @@ export class HomeComponent implements  OnInit  {
       check=true;
 
     } else{
-      console.log(window.pageYOffset);
+    
       clearTimeout(timer)
     }
   }
